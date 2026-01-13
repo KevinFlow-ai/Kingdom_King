@@ -3,5 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="letras_login">#3d2b1e</color>
+    <color name="viking">#D6C7A1</color>
+
 
 </resources>
