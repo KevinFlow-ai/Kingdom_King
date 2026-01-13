@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pag2_fondo_login">
+    android:background="@drawable/pag2_fondo_login"
+    tools:context=".PagB_Login_Activity">
 
     <!-- Guideline vertical a 5% desde la izquierda
     0.05 → 5% desde el borde izquierdo-->
