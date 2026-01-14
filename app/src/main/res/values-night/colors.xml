@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="Color_letras_home">#E0C9A6</color>
+    <color name="color_letra_nombre_usuario_pag3_home">#E0C9A6</color>
 </resources>

@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/nombre_perfil_usuario"
-            android:textColor="#E0C9A6"
+            android:textColor="@color/color_letra_nombre_usuario_pag3_home"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imagenPerfilUsuario"
