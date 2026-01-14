@@ -391,7 +391,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.90" />
 
 
     <!-- layaout/Contenedor para Espada, Armadura...) -->
@@ -633,24 +633,97 @@
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_btnes_inferior_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.96032834" />
 
+    <!-- CONTENEDOR DE NAVEGACIÓN INFERIOR (Barra de botones final) -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedor_navegacion_inferior"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_btnes_inferior_home"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guide_vertical_derecha"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
         app:layout_constraintTop_toTopOf="@+id/guideline_contenedor_compra">
 
+        <!-- Botón 1: INICIO (Home) -->
+        <ImageView
+            android:id="@+id/pag3_btn_inferior_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_cartera"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/pag3_btn_inferior_home"
+            android:contentDescription="Botón inicio" />
 
+        <!-- Botón 2: CARTERA (Objetos/Dinero) -->
+        <ImageView
+            android:id="@+id/pag3_btn_inferior_cartera"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_principal"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_home"
+            app:srcCompat="@drawable/pag3_btn_inferior_cartera"
+            android:contentDescription="Botón cartera" />
+
+        <!-- Botón 3: PRINCIPAL (El central más grande) -->
+        <ImageView
+            android:id="@+id/pag3_btn_inferior_principal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_noti"
+            app:layout_constraintHorizontal_weight="1.3"
+            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_cartera"
+            app:srcCompat="@drawable/pag3_btn_inferior_principal"
+            android:contentDescription="Botón principal" />
+
+        <!-- Botón 4: NOTIFICACIONES -->
+        <ImageView
+            android:id="@+id/pag3_btn_inferior_noti"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_obj"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_principal"
+            app:srcCompat="@drawable/pag3_btn_inferior_noti"
+            android:contentDescription="Botón notificaciones" />
+
+        <!-- Botón 5: OBJETOS (Casco) -->
+        <ImageView
+            android:id="@+id/pag3_btn_inferior_obj"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_noti"
+            app:srcCompat="@drawable/pag3_btn_inferior_obj"
+            android:contentDescription="Botón objetos" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
