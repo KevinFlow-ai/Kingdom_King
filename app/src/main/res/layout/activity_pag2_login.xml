@@ -165,7 +165,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/pag2_marco_apple_google"
             android:backgroundTint="@null"
-            android:drawableStart="@drawable/pag_icono_apple"
+            android:drawableStart="@drawable/pag2_icono_apple"
             android:drawablePadding="25dp"
             android:gravity="center_vertical"
             android:paddingStart="35dp"

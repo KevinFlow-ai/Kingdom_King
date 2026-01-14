@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kingdom_King</string>
     <string name="nombre_perfil_usuario">Welcome, Jarl Erik</string>
     <string name="Numero_De_Monedas">350</string>
     <string name="icono_moneda">icono_moneda</string>
