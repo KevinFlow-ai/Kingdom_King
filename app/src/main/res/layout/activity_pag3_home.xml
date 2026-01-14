@@ -640,9 +640,17 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.96032834" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_btnes_inferior_home"
+        app:layout_constraintEnd_toStartOf="@+id/guide_vertical_derecha"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
+        app:layout_constraintTop_toTopOf="@+id/guideline_contenedor_compra">
 
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
