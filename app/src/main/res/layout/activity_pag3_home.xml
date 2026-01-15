@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pag3_fondo_home"
+    android:background="@drawable/pag3_posible_fondo_home1"
     tools:context=".PagC_Home_Activity">
 
     <!-- Guideline arriba/TOP -->
@@ -66,7 +66,8 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pag3_foto_perfil" />
+            app:srcCompat="@drawable/pag3_foto_perfil"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/nombre_usuario"
@@ -161,7 +162,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:hint="Search"
+            android:hint="@string/search"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:textColor="@color/Color_letras_home"
@@ -240,7 +241,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.8"
-                android:contentDescription="Icono de armas"
+                android:contentDescription="@string/icono_de_armas"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/pag3_icono_hacha" />
 
@@ -250,7 +251,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:text="Weapons"
+                android:text="@string/weapons"
                 android:textColor="@color/Color_letras_home"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -272,7 +273,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.8"
-                android:contentDescription="Icono de armaduras"
+                android:contentDescription="@string/icono_de_armaduras"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/pag3_icono_casco_armadura" />
 
@@ -282,7 +283,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:text="Armor"
+                android:text="@string/casco_home"
                 android:textColor="@color/Color_letras_home"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -306,7 +307,8 @@
                 android:layout_weight="0.8"
                 android:contentDescription="Icono de ropa"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/pag3_icono_ropa" />
+                app:srcCompat="@drawable/pag3_icono_ropa"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/txt_ropa"
@@ -314,7 +316,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:text="Clothing"
+                android:text="@string/ropa_home"
                 android:textColor="@color/Color_letras_home"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -338,7 +340,8 @@
                 android:layout_weight="0.8"
                 android:contentDescription="Icono de artefactos"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/pag3_icono_herramientas" />
+                app:srcCompat="@drawable/pag3_icono_herramientas"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/txt_herramientas"
@@ -346,7 +349,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:text="Artifacts"
+                android:text="@string/artifacts"
                 android:textColor="@color/Color_letras_home"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -376,6 +379,7 @@
             android:id="@+id/foto_recommend"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:contentDescription="@string/foto_recommended"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -391,7 +395,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.87" />
 
 
     <!-- layaout/Contenedor para Espada, Armadura...) -->
@@ -419,19 +423,21 @@
                 android:id="@+id/img_espada"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:contentDescription="espada"
                 android:padding="8dp"
                 android:scaleType="fitCenter"
                 app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/pag3_icono_espada" />
+                app:srcCompat="@drawable/pag3_icono_espada"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/txt_nombre_espada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Viking Sword"
+                android:text="@string/nombre_espada"
                 android:textColor="@color/Color_letras_home"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -452,7 +458,8 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_marginEnd="4dp"
-                    app:srcCompat="@drawable/moneda" />
+                    app:srcCompat="@drawable/moneda"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -460,7 +467,8 @@
                     android:text="1200 G"
                     android:textColor="@color/color_valor_moneda"
                     android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <ImageView
@@ -494,13 +502,13 @@
                 android:id="@+id/img_armadura"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:padding="8dp"
+                android:padding="10dp"
                 android:scaleType="fitCenter"
                 app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/pag3_icono_casco_armadura" />
+                app:srcCompat="@drawable/pag3_chaleco" />
 
             <TextView
                 android:id="@+id/txt_nombre_armadura"
@@ -511,7 +519,8 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/img_armadura" />
+                app:layout_constraintTop_toBottomOf="@+id/img_armadura"
+                tools:ignore="HardcodedText" />
 
             <LinearLayout
                 android:id="@+id/contenedor_precio_armadura"
@@ -527,7 +536,8 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_marginEnd="4dp"
-                    app:srcCompat="@drawable/moneda" />
+                    app:srcCompat="@drawable/moneda"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -569,13 +579,14 @@
                 android:id="@+id/img_cuerno"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:padding="8dp"
+                android:padding="8.5dp"
                 android:scaleType="fitCenter"
                 app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/pag3_icono_herramientas" />
+                app:srcCompat="@drawable/pag3_cuerno"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/txt_nombre_cuerno"
@@ -602,7 +613,8 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_marginEnd="4dp"
-                    app:srcCompat="@drawable/moneda" />
+                    app:srcCompat="@drawable/moneda"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -634,95 +646,110 @@
     </LinearLayout>
 
 
-    <!-- CONTENEDOR DE NAVEGACIÓN INFERIOR (Barra de botones final) -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contenedor_navegacion_inferior"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/marco_btn_inferior_cleanup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guide_vertical_derecha"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
         app:layout_constraintTop_toTopOf="@+id/guideline_contenedor_compra">
 
-        <!-- Botón 1: INICIO (Home) -->
+
         <ImageView
-            android:id="@+id/pag3_btn_inferior_home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/boton_inferior_inicio"
+            android:layout_width="73dp"
+            android:layout_height="74dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:padding="12dp"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_cartera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/boton_inferior_cartera"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/pag3_btn_inferior_home"
-            android:contentDescription="Botón inicio" />
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <!-- Botón 2: CARTERA (Objetos/Dinero) -->
         <ImageView
-            android:id="@+id/pag3_btn_inferior_cartera"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/boton_inferior_cartera"
+            android:layout_width="73dp"
+            android:layout_height="74dp"
             android:clickable="true"
+            android:contentDescription="Ver cartera"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:padding="12dp"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_principal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/boton_inferior_central_principal"
             app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_home"
+            app:layout_constraintStart_toEndOf="@+id/boton_inferior_inicio"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/pag3_btn_inferior_cartera"
-            android:contentDescription="Botón cartera" />
+            tools:ignore="HardcodedText" />
 
-        <!-- Botón 3: PRINCIPAL (El central más grande) -->
         <ImageView
-            android:id="@+id/pag3_btn_inferior_principal"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/boton_inferior_central_principal"
+            android:layout_width="73dp"
+            android:layout_height="74dp"
             android:clickable="true"
+            android:contentDescription="Botón principal"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:padding="2dp"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_noti"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/boton_inferior_notificaciones"
             app:layout_constraintHorizontal_weight="1.3"
-            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_cartera"
+            app:layout_constraintStart_toEndOf="@+id/boton_inferior_cartera"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/pag3_btn_inferior_principal"
-            android:contentDescription="Botón principal" />
+            tools:ignore="HardcodedText" />
 
-        <!-- Botón 4: NOTIFICACIONES -->
         <ImageView
-            android:id="@+id/pag3_btn_inferior_noti"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/boton_inferior_notificaciones"
+            android:layout_width="73dp"
+            android:layout_height="74dp"
             android:clickable="true"
+            android:contentDescription="Ver avisos"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:padding="12dp"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/pag3_btn_inferior_obj"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/boton_inferior_objetos"
             app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_principal"
-            app:srcCompat="@drawable/pag3_btn_inferior_noti"
-            android:contentDescription="Botón notificaciones" />
+            app:layout_constraintStart_toEndOf="@+id/boton_inferior_central_principal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/pag3_btn_inferior_obj"
+            tools:ignore="HardcodedText" />
 
-        <!-- Botón 5: OBJETOS (Casco) -->
         <ImageView
-            android:id="@+id/pag3_btn_inferior_obj"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/boton_inferior_objetos"
+            android:layout_width="73dp"
+            android:layout_height="74dp"
             android:clickable="true"
+            android:contentDescription="Ver equipamiento"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:padding="12dp"
             android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@+id/pag3_btn_inferior_noti"
-            app:srcCompat="@drawable/pag3_btn_inferior_obj"
-            android:contentDescription="Botón objetos" />
+            app:layout_constraintStart_toEndOf="@+id/boton_inferior_notificaciones"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/pag3_btn_inferior_noti"
+            tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

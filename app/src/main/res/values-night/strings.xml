@@ -7,4 +7,12 @@
     <string name="icono_lupa">icono_lupa</string>
     <string name="buscador">buscador</string>
     <string name="descripcion_oferta_hombre">banner_hombre_con_hacha</string>
+    <string name="search">Search</string>
+    <string name="weapons">Weapons</string>
+    <string name="icono_de_armaduras">Icono de armaduras</string>
+    <string name="casco_home">Armor</string>
+    <string name="ropa_home">Clothing</string>
+    <string name="artifacts">Artifacts</string>
+    <string name="foto_recommended">foto_recommended</string>
+    <string name="nombre_espada">Viking Sword</string>
 </resources>
