@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PagD_Espada_Activity"
+    android:background="@drawable/fondopantalla3">
+
+
+    <!-- Guideline arriba/TOP -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_arriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <!-- Guideline que envuelve el perfil de usuario -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_perfil_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <!-- Guideline vertical izquierdo, para dejar margenes -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_izquierdo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <!-- Guideline vertical derecha, para dejar margenes -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_vertical_derecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_perfil_usuario"
+        app:layout_constraintEnd_toStartOf="@+id/guide_vertical_derecha"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top_arriba">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="65dp"
+            android:layout_height="38dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/fleecha"
+            tools:layout_editor_absoluteY="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
