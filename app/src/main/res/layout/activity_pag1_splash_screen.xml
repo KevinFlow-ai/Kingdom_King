@@ -2,17 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/contenedor_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pag1_splash_screen"
+    android:background="@android:color/black"
     tools:context=".PagA_Splash_Screen_Activity">
 
-    <Button
-        android:id="@+id/buttonsplash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="454dp" />
+    <!-- Imagen de fondo que vamos a animar (Empieza en el centro) -->
+    <ImageView
+        android:id="@+id/imagen_fondo_animada"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/pag1_splash_screen"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Fondo animado" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
