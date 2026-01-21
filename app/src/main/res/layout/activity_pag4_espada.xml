@@ -205,7 +205,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8878249" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -214,7 +214,169 @@
         app:layout_constraintBottom_toTopOf="@+id/contenedor_detalles_espada"
         app:layout_constraintEnd_toStartOf="@+id/guide_vertical_derecha"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline7">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Detalles_letras_pag4"
+            android:textSize="20sp"
+            android:text="Width.................3.5 cm"
+            android:layout_marginTop="8dp"
+
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Detalles_letras_pag4"
+            android:textSize="20sp"
+            android:text="Length...............95 cm"
+            android:layout_marginTop="5dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Detalles_letras_pag4"
+            android:textSize="20sp"
+            android:text="Weight...............1.2 kg"
+            android:layout_marginTop="5dp"
+
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Detalles_letras_pag4"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+
+            android:text="@string/detalles_especificacion_espada_pag4" />
+    </LinearLayout>
+
+    <!-- Esta guía define el inicio de la franja decorativa inferior (aprox al 92% de la pantalla) -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_marco_inferior_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9001122" />
+
+    <!-- Esta guía define el margen de seguridad antes del borde físico del móvil -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_marco_inferior_fin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <!-- 1. GUÍA PARA LA SECCIÓN DE COMPRA (QUANTITY / PRECIO) -->
+    <!-- Define dónde empieza el bloque de madera (aprox al 83% de la pantalla) -->
+
+    <TextView
+        android:id="@+id/tv_checkout_boton"
+        android:layout_width="137dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="Checkout"
+        android:textColor="@color/color_letras_pag4"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guia_marco_inferior_fin"
+        app:layout_constraintEnd_toStartOf="@+id/guide_vertical_derecha"
+        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_seccion_compra_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <!-- 2. CONTENEDOR PRINCIPAL DEL MARCO DE MADERA -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedor_compra"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/marco_inferior_pag4"
+        android:padding="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/guia_seccion_compra_inicio"
+        app:layout_constraintBottom_toTopOf="@+id/guia_marco_inferior_inicio"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
+        app:layout_constraintEnd_toEndOf="@+id/guide_vertical_derecha">
+
+        <!-- Línea invisible en el medio para separar Quantity de Precio -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guia_central_madera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <!-- LADO IZQUIERDO: Quantity -->
+        <TextView
+            android:id="@+id/tv_cantidad_texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity 1"
+            android:textColor="@color/color_letras_pag4"
+            android:textSize="18sp"
+            android:alpha="0.8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guia_central_madera" />
+
+        <!-- LADO DERECHO: Icono Moneda y Precio -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guia_central_madera"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/img_moneda_precio"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/moneda"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/tv_precio_valor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,200 G"
+                android:textColor="@color/color_letras_pag4"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
