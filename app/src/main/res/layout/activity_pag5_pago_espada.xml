@@ -8,4 +8,65 @@
     tools:context=".PagE_Pago_Espada_Activity"
     android:background="@drawable/pago_espadaa_1">
 
+    <!-- Guideline arriba/TOP -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_arriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <!-- Guideline que envuelve los detalles de la espada -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/header_espada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <!-- Guideline vertical izquierdo, para dejar margenes -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_izquierdo"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <!-- Guideline vertical derecha, para dejar margenes -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_vertical_derecha"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/header_espada"
+        app:layout_constraintEnd_toStartOf="@+id/guide_vertical_derecha"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top_arriba">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="28dp"
+            android:clickable="true"
+            android:contentDescription="@string/flecha_atras"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.64"
+            app:srcCompat="@drawable/fleecha"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
