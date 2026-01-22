@@ -9,7 +9,7 @@
     tools:context=".PagE_Pago_Espada_Activity"
     android:background="@drawable/pago_espadaa_1">
 
-    <!-- Guía superior para márgenes responsivos -->
+    <!-- Guía superior-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top_arriba"
         android:layout_width="wrap_content"
