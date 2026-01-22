@@ -9,7 +9,7 @@
     tools:context=".PagE_Pago_Espada_Activity"
     android:background="@drawable/pago_espadaa_1">
 
-    <!-- Guideline arriba/TOP -->
+    <!-- Guía superior para márgenes responsivos -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top_arriba"
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.02" />
 
-    <!-- Guideline que envuelve el perfil de usuario -->
+    <!-- Guía de cabecera -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_header_checkout"
         android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.10" />
 
-    <!-- Guideline vertical izquierdo, para dejar margenes -->
+    <!-- Guías laterales para adaptabilidad -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical_izquierdo"
         android:orientation="vertical"
@@ -33,7 +33,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.05" />
 
-    <!-- Guideline vertical derecha, para dejar margenes -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_vertical_der"
         android:orientation="vertical"
@@ -41,6 +40,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.95" />
 
+    <!-- CABECERA -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header_cabecera"
         android:layout_width="0dp"
@@ -50,21 +50,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
         app:layout_constraintTop_toTopOf="@+id/guideline_top_arriba">
 
-        <!-- Flecha atras
-    android:foreground="?attr/selectableItemBackgroundBorderless"
-    se utiliza para añadir un efecto visual de retroalimentación táctil
-     (ripple o "onda")
-
-     android:clickable="true". Indica que el elemento puede recibir eventos de clic.
-     Una imagen para que funcione como un boton, esta opción para que el sistema
-     detecte cuando el usuario lo toca y pueda ejecutar una acción
-      (como abrir otra pantalla).
-
-      android:focusable="true". Indica que el elemento puede ganar el foco del sistema.
-      Permite que el elemento sea seleccionado usando métodos de entrada que no son la pantalla táctil, como un teclado físico o
-      por voz para los ciegos
-
-     -->
         <ImageView
             android:id="@+id/flecha_atras"
             android:layout_width="0dp"
@@ -81,7 +66,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/fleecha"
             tools:ignore="TouchTargetSizeCheck" />
-
 
         <TextView
             android:id="@+id/txt_titulo_checkout"
@@ -125,9 +109,9 @@
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- CONTENIDO CON SCROLL -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -143,7 +127,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="16dp">
 
-            <!-- Contenedor del producto (Espada) -->
+            <!-- BLOQUE: PRODUCTO (ESPADA) -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contenedor_producto_espada"
                 android:layout_width="match_parent"
@@ -153,7 +137,6 @@
                 android:layout_margin="5dp"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <!-- Imagen de la Espada -->
                 <ImageView
                     android:id="@+id/img_espada_vikinga"
                     android:layout_width="80dp"
@@ -164,7 +147,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/pag5_icono_espada" />
 
-                <!-- Nombre del producto -->
                 <TextView
                     android:id="@+id/txt_nombre_espada"
                     android:layout_width="0dp"
@@ -178,7 +160,6 @@
                     app:layout_constraintStart_toEndOf="@+id/img_espada_vikinga"
                     app:layout_constraintTop_toTopOf="@+id/img_espada_vikinga" />
 
-                <!-- Precio del producto -->
                 <TextView
                     android:id="@+id/txt_precio_espada"
                     android:layout_width="wrap_content"
@@ -190,7 +171,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/txt_nombre_espada" />
 
-                <!-- Total acumulado debajo del precio -->
                 <TextView
                     android:id="@+id/txt_subtotal_acumulado"
                     android:layout_width="wrap_content"
@@ -202,18 +182,399 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_precio_espada" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            
+            <!-- BLOQUE: RESUMEN DEL PEDIDO -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contenedor_order_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/marco_total_pag5"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/contenedor_producto_espada">
 
-            <!-- Espacio para el resto de elementos (Resumen, Información Pago, etc.) -->
-            <!-- Aquí puedes ir añadiendo los siguientes bloques siguiendo este estilo -->
+                <TextView
+                    android:id="@+id/txt_order_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Summary"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/linea_decorativa_izq"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@color/color_letras_pag5"
+                    android:alpha="0.4"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_order_summary"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_order_summary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_order_summary" />
+
+                <View
+                    android:id="@+id/linea_decorativa_der"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/color_letras_pag5"
+                    android:alpha="0.4"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_order_summary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_order_summary"
+                    app:layout_constraintTop_toTopOf="@+id/txt_order_summary" />
+
+                <TextView
+                    android:id="@+id/txt_eti_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Subtotal:"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_order_summary" />
+
+                <TextView
+                    android:id="@+id/txt_val_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,200 G"
+                    android:textColor="#E0C9A6"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_eti_subtotal"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_eti_shipping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Shipping:"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_eti_subtotal" />
+
+                <TextView
+                    android:id="@+id/txt_val_shipping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50 G"
+                    android:textColor="#E0C9A6"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_eti_shipping"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <View
+                    android:id="@+id/divisor_resumen"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/color_letras_pag5"
+                    android:alpha="0.2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_eti_shipping" />
+
+                <TextView
+                    android:id="@+id/txt_eti_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Total:"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divisor_resumen" />
+
+                <TextView
+                    android:id="@+id/txt_val_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,250 G"
+                    android:textColor="#E0C9A6"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_eti_total"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- BLOQUE: INFORMACIÓN DE PAGO -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contenedor_info_pago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/contenedor_order_summary">
+
+                <TextView
+                    android:id="@+id/txt_payment_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Information"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/linea_pago_izq"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@color/color_letras_pag5"
+                    android:alpha="0.4"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_payment_info"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_payment_info"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_payment_info" />
+
+                <View
+                    android:id="@+id/linea_pago_der"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/color_letras_pag5"
+                    android:alpha="0.4"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_payment_info"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_payment_info"
+                    app:layout_constraintTop_toTopOf="@+id/txt_payment_info" />
+
+                <!-- Contenedor Tarjeta -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contenedor_tarjeta_pago"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/marco_tarjeta_pag5"
+                    android:padding="12dp"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_payment_info">
+
+                    <ImageView
+                        android:id="@+id/img_usuario_card"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/muneco_pag5" />
+
+                    <TextView
+                        android:id="@+id/txt_nombre_titular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Erik Thorvaldsson"
+                        android:textColor="@color/color_letras_pag5"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_usuario_card"
+                        app:layout_constraintEnd_toStartOf="@+id/txt_marca_visa"
+                        app:layout_constraintStart_toEndOf="@+id/img_usuario_card"
+                        app:layout_constraintTop_toTopOf="@+id/img_usuario_card" />
+
+                    <TextView
+                        android:id="@+id/txt_marca_visa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VISA"
+                        android:textColor="@color/color_letras_pag5"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_nombre_titular"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txt_nombre_titular" />
+
+                    <View
+                        android:id="@+id/divisor_card_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/color_letras_pag5"
+                        android:alpha="0.2"
+                        app:layout_constraintTop_toBottomOf="@+id/img_usuario_card" />
+
+                    <TextView
+                        android:id="@+id/txt_num_tarjeta"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="VISA **** **** **** 4567"
+                        android:textColor="@color/color_letras_pag5"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/img_chip_card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divisor_card_1" />
+
+                    <ImageView
+                        android:id="@+id/img_chip_card"
+                        android:layout_width="32dp"
+                        android:layout_height="24dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_num_tarjeta"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txt_num_tarjeta"
+                        app:srcCompat="@drawable/tarjeta_pag5" />
+
+                    <View
+                        android:id="@+id/divisor_card_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/color_letras_pag5"
+                        android:alpha="0.2"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_num_tarjeta" />
+
+                    <ImageView
+                        android:id="@+id/img_calendario"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divisor_card_2"
+                        app:srcCompat="@drawable/calendario_pag5" />
+
+                    <TextView
+                        android:id="@+id/txt_fecha_exp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="12/25"
+                        android:textColor="@color/color_letras_pag5"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_calendario"
+                        app:layout_constraintStart_toEndOf="@+id/img_calendario"
+                        app:layout_constraintTop_toTopOf="@+id/img_calendario" />
+
+                    <ImageView
+                        android:id="@+id/img_cvv"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="32dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_calendario"
+                        app:layout_constraintStart_toEndOf="@+id/txt_fecha_exp"
+                        app:layout_constraintTop_toTopOf="@+id/img_calendario"
+                        app:srcCompat="@drawable/obj_pag5" />
+
+                    <TextView
+                        android:id="@+id/txt_val_cvv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="123"
+                        android:textColor="@color/color_letras_pag5"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_cvv"
+                        app:layout_constraintStart_toEndOf="@+id/img_cvv"
+                        app:layout_constraintTop_toTopOf="@+id/img_cvv" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Checkbox -->
+                <CheckBox
+                    android:id="@+id/chk_guardar_info_pago"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Save this card for future purchases"
+                    android:textColor="@color/color_letras_pag5"
+                    android:buttonTint="@color/color_letras_pag5"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contenedor_tarjeta_pago" />
+
+                <!-- BOTONES PAGO APPLE Y GOOGLE -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_pago_apple"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/pag5_marco_pago_apple_google"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:layout_constraintTop_toBottomOf="@+id/chk_guardar_info_pago">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/pag5_icono_apple" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Pay with Apple Pay"
+                            android:textColor="@color/color_letras_pag5"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_pago_google"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/pag5_marco_pago_apple_google"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_pago_apple">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/pag5_google" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Pay with Google Pay"
+                            android:textColor="@color/color_letras_pag5"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-
+    <!-- GUÍA INFERIOR -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_contenedor_compra"
         android:layout_width="wrap_content"
@@ -221,6 +582,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.87" />
 
+    <!-- BARRA NAVEGACIÓN INFERIOR -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -325,8 +687,5 @@
             tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
