@@ -288,7 +288,7 @@
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
         android:gravity="center"
-        android:text="Checkout"
+        android:text="@string/checkout"
         android:textColor="@color/color_letras_pag4"
         android:textSize="22sp"
         android:textStyle="bold"
