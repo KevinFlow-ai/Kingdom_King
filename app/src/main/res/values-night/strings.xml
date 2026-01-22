@@ -17,4 +17,5 @@
     <string name="nombre_espada">Viking Sword</string>
     <string name="carrito_pag4">Carrito</string>
     <string name="detalles_especificacion_espada_pag4">A finely crafted Norse longsword with a sharp steel blade, an intricately engraved hilt, and a leather-wrapped grip. Perfect for any moderrday viking warrior.</string>
+    <string name="fondo_animado_splash_screen">Fondo animado</string>
 </resources>

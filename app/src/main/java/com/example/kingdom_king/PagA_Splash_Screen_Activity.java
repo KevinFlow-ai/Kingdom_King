@@ -33,7 +33,7 @@ public class PagA_Splash_Screen_Activity extends AppCompatActivity {
                 Animation.RELATIVE_TO_SELF, 0.5f, // Pivote en el centro
                 Animation.RELATIVE_TO_SELF, 0.5f
         );
-        zoomIn.setDuration(2000); // 2.5 segundos para que sea épico
+        zoomIn.setDuration(2000); // 2 segundos para que sea épico
 
         // 2. Animación de Aparecer (Alpha)
         AlphaAnimation aparecer = new AlphaAnimation(0.0f, 1.0f);
@@ -57,13 +57,14 @@ public class PagA_Splash_Screen_Activity extends AppCompatActivity {
     }
 }
 
-/*
 
+
+
+/*
 
 =============================================
 ANIMACION DE REBOTE DE ABAJO HACIA ARRIBA
 =============================================
-
 
 
 package com.example.kingdom_king;
@@ -119,6 +120,154 @@ public class PagA_Splash_Screen_Activity extends AppCompatActivity {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         }, 3000);
+    }
+}
+ */
+
+
+
+
+
+/*
+
+=============================================
+ANIMACION DE VOLTERETA/GIROS
+=============================================
+
+package com.example.kingdom_king;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
+import android.widget.ImageView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PagA_Splash_Screen_Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_pag1_splash_screen);
+
+        ImageView fondoAnimado = findViewById(R.id.imagen_fondo_animada);
+
+        // CONFIGURACIÓN DE LA ANIMACIÓN DE "ZOOM"
+        // CONFIGURACIÓN: GIRO + ZOOM
+        AnimationSet conjuntoAnimaciones = new AnimationSet(true);
+
+// 1. Rotación: Da una vuelta completa (360 grados)
+        RotateAnimation girar = new RotateAnimation(0, 360,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+        );
+        girar.setDuration(2000);
+
+// 2. Escalado: De pequeño a grande
+        ScaleAnimation crecer = new ScaleAnimation(
+                0.2f, 1.0f, 0.2f, 1.0f,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+        );
+        crecer.setDuration(2000);
+
+// 3. Aparecer
+        AlphaAnimation aparecer = new AlphaAnimation(0.0f, 1.0f);
+        aparecer.setDuration(1000);
+
+        conjuntoAnimaciones.addAnimation(girar);
+        conjuntoAnimaciones.addAnimation(crecer);
+        conjuntoAnimaciones.addAnimation(aparecer);
+        conjuntoAnimaciones.setInterpolator(new AccelerateDecelerateInterpolator());
+
+        fondoAnimado.startAnimation(conjuntoAnimaciones);
+
+        // TRANSICIÓN A LA SIGUIENTE PANTALLA
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(PagA_Splash_Screen_Activity.this, PagB_Login_Activity.class);
+            startActivity(intent);
+            // Efecto de transición suave entre actividades
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            finish();
+        }, 3000); // Esperamos 3 segundos en total
+    }
+}
+ */
+
+
+
+
+
+
+
+
+
+
+/*
+
+=============================================
+ANIMACION DE Entrada Diagonal (Efecto "Corte de Espada")
+=============================================
+
+package com.example.kingdom_king;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PagA_Splash_Screen_Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_pag1_splash_screen);
+
+        ImageView fondoAnimado = findViewById(R.id.imagen_fondo_animada);
+
+        // CONFIGURACIÓN DE LA ANIMACIÓN DE "ZOOM"
+        // CONFIGURACIÓN: ENTRADA DIAGONAL
+        AnimationSet conjuntoAnimaciones = new AnimationSet(true);
+
+// Viene desde fuera de la pantalla (-100% en X y Y)
+        TranslateAnimation diagonal = new TranslateAnimation(
+                Animation.RELATIVE_TO_PARENT, -1.0f, Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, -1.0f, Animation.RELATIVE_TO_PARENT, 0.0f
+        );
+        diagonal.setDuration(1500);
+
+// Añadimos un poco de rebote al final para que no sea seco
+        conjuntoAnimaciones.setInterpolator(new android.view.animation.OvershootInterpolator(1.0f));
+        conjuntoAnimaciones.addAnimation(diagonal);
+
+        fondoAnimado.startAnimation(conjuntoAnimaciones);
+
+        // TRANSICIÓN A LA SIGUIENTE PANTALLA
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(PagA_Splash_Screen_Activity.this, PagB_Login_Activity.class);
+            startActivity(intent);
+            // Efecto de transición suave entre actividades
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            finish();
+        }, 3000); // Esperamos 3 segundos en total
     }
 }
  */
