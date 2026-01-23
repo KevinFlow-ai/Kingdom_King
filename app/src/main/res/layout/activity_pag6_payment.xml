@@ -8,51 +8,264 @@
     tools:context=".PagF_Payment_Activity"
     android:background="@drawable/pag6_fondo_1">
 
-    <!-- Guía superior para márgenes responsivos -->
+    <!-- Guía superior para el inicio del contenido -->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top_arriba"
+        android:id="@+id/guia_superior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.01" />
+        app:layout_constraintGuide_percent="0.05" />
 
-
-
-    <!-- Guías laterales para adaptabilidad -->
+    <!-- Guías laterales para adaptabilidad responsiva -->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical_izquierdo"
+        android:id="@+id/guia_izquierda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0" />
+        app:layout_constraintGuide_percent="0.02" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guia_vertical_der"
+        android:id="@+id/guia_derecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="1.0" />
+        app:layout_constraintGuide_percent="0.95" />
+
+    <!-- CONTENIDO DESPLAZABLE -->
+    <ScrollView
+        android:id="@+id/scroll_contenido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="@+id/guia_superior"
+        app:layout_constraintBottom_toTopOf="@+id/guia_inferior_barra"
+        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
+        app:layout_constraintEnd_toStartOf="@+id/guia_derecha">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <!-- Imagen del Escudo de Éxito -->
+            <ImageView
+                android:id="@+id/img_escudo_exito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.6"
+                app:srcCompat="@drawable/pantalla6_escudo" />
+
+            <!-- Título de Pago Exitoso -->
+            <TextView
+                android:id="@+id/txt_titulo_pago_exitoso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Payment Successful!"
+                android:textColor="@color/color_letras_pag5"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_escudo_exito" />
+
+            <!-- Mensaje de confirmación -->
+            <TextView
+                android:id="@+id/txt_mensaje_confirmacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Your order has been placed!\nThank you for shopping at Viking Market.\nAn email confirmation has been sent to\nerik@example.com."
+                android:textColor="@color/color_letras_pag5"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:layout_margin="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_titulo_pago_exitoso" />
+
+            <!-- SECCIÓN: RESUMEN DEL PEDIDO (Order Summary) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contenedor_resumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+                app:layout_constraintTop_toBottomOf="@+id/txt_mensaje_confirmacion">
+
+                <TextView
+                    android:id="@+id/txt_eti_order_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Summary"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@color/color_letras_pag5"
+                    android:alpha="0.4"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_eti_order_summary"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_eti_order_summary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_eti_order_summary" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/color_letras_pag5"
+                    android:alpha="0.4"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_eti_order_summary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_eti_order_summary"
+                    app:layout_constraintTop_toTopOf="@+id/txt_eti_order_summary" />
+
+                <!-- Detalle: Producto -->
+                <TextView
+                    android:id="@+id/txt_nombre_producto_resumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Viking Sword ×1"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="20sp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_eti_order_summary" />
+
+                <TextView
+                    android:id="@+id/txt_precio_producto_resumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,200 G"
+                    android:textColor="#E0C9A6"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_nombre_producto_resumen"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- Detalle: Envío -->
+                <TextView
+                    android:id="@+id/txt_eti_shipping_resumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Shipping:"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_nombre_producto_resumen" />
+
+                <TextView
+                    android:id="@+id/txt_val_shipping_resumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50 G"
+                    android:textColor="#E0C9A6"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_eti_shipping_resumen"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- Detalle: Total Pagado -->
+                <TextView
+                    android:id="@+id/txt_eti_total_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Total Paid:"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_eti_shipping_resumen" />
+
+                <TextView
+                    android:id="@+id/txt_val_total_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,250 G"
+                    android:textColor="#E0C9A6"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_eti_total_paid"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Botón: Continue Shopping -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_continuar_comprando"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/pag6_marco_shopping"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:layout_constraintTop_toBottomOf="@+id/contenedor_resumen">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Continue Shopping"
+                    android:textColor="@color/color_letras_pag5"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- GUÍA INFERIOR -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- GUÍA INFERIOR PARA LA BARRA -->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_contenedor_compra"
+        android:id="@+id/guia_inferior_barra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.87" />
 
-    <!-- BARRA NAVEGACIÓN INFERIOR -->
+    <!-- BARRA NAVEGACIÓN INFERIOR (Reutilizada) -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/barra_inferior"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/marco_btn_inferior_cleanup"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guia_vertical_der"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
-        app:layout_constraintTop_toTopOf="@+id/guideline_contenedor_compra">
-
+        app:layout_constraintEnd_toStartOf="@+id/guia_derecha"
+        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
+        app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra">
 
         <ImageView
             android:id="@+id/boton_inferior_inicio"
@@ -69,8 +282,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/pag3_btn_inferior_home"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:srcCompat="@drawable/pag3_btn_inferior_home" />
 
         <ImageView
             android:id="@+id/boton_inferior_cartera"
@@ -88,8 +300,7 @@
             app:layout_constraintStart_toEndOf="@+id/boton_inferior_inicio"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/pag3_btn_inferior_cartera"
-            tools:ignore="HardcodedText" />
+            app:srcCompat="@drawable/pag3_btn_inferior_cartera" />
 
         <ImageView
             android:id="@+id/boton_inferior_central_principal"
@@ -106,8 +317,7 @@
             app:layout_constraintHorizontal_weight="1.3"
             app:layout_constraintStart_toEndOf="@+id/boton_inferior_cartera"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pag3_btn_inferior_principal"
-            tools:ignore="HardcodedText" />
+            app:srcCompat="@drawable/pag3_btn_inferior_principal" />
 
         <ImageView
             android:id="@+id/boton_inferior_notificaciones"
@@ -125,8 +335,7 @@
             app:layout_constraintStart_toEndOf="@+id/boton_inferior_central_principal"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/pag3_btn_inferior_obj"
-            tools:ignore="HardcodedText" />
+            app:srcCompat="@drawable/pag3_btn_inferior_obj" />
 
         <ImageView
             android:id="@+id/boton_inferior_objetos"
@@ -144,8 +353,7 @@
             app:layout_constraintStart_toEndOf="@+id/boton_inferior_notificaciones"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/pag3_btn_inferior_noti"
-            tools:ignore="HardcodedText" />
+            app:srcCompat="@drawable/pag3_btn_inferior_noti" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
