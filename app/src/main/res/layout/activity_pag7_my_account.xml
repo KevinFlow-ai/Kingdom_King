@@ -186,14 +186,15 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toStartOf="@+id/guia_derecha"
-        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
-        app:layout_constraintTop_toTopOf="@+id/header">
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/guideline10"
+        app:layout_constraintStart_toStartOf="@id/guia_izquierda"
+        app:layout_constraintEnd_toEndOf="@id/guia_derecha">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <ImageView
                 android:id="@+id/img_escudo_exito"
@@ -208,6 +209,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/pag7_foto_perfil" />
+
+
+
+
+
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
