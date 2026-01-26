@@ -19,4 +19,10 @@
     <string name="detalles_especificacion_espada_pag4">A finely crafted Norse longsword with a sharp steel blade, an intricately engraved hilt, and a leather-wrapped grip. Perfect for any moderrday viking warrior.</string>
     <string name="fondo_animado_splash_screen">Fondo animado</string>
     <string name="checkout">Checkout</string>
+    <string name="correo_usuario_pag7">erik@example.com</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="lista_de_deseos">My Wishlist</string>
+    <string name="payment_methods_pag7">Payment Methods</string>
+    <string name="notificaciones">Notifications</string>
+    <string name="cerrar_sesion">Log Out</string>
 </resources>

@@ -39,7 +39,7 @@
         android:fillViewport="true"
         android:scrollbars="none"
         app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintBottom_toTopOf="@+id/guia_inferior_barra"
+        app:layout_constraintBottom_toTopOf="@+id/guia_inferior_cinco_btn"
         app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
         app:layout_constraintEnd_toStartOf="@+id/guia_derecha">
 
@@ -250,7 +250,7 @@
 
     <!-- GUÍA INFERIOR PARA LA BARRA -->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guia_inferior_barra"
+        android:id="@+id/guia_inferior_cinco_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -265,7 +265,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guia_derecha"
         app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
-        app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra">
+        app:layout_constraintTop_toTopOf="@+id/guia_inferior_cinco_btn">
 
         <ImageView
             android:id="@+id/boton_inferior_inicio"

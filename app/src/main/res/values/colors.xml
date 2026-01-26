@@ -11,6 +11,7 @@
     <color name="Detalles_letras_pag4">#997B61</color>
     <color name="color_letras_pag5">#E0C9A6</color>
     <color name="numeros_monedas_pag5">#E0C9A6</color>
+    <color name="color_saldo_moneda_pag7">#D4AF37</color>
 
 
 </resources>
