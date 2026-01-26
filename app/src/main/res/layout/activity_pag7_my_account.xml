@@ -355,7 +355,6 @@
                     tools:ignore="ContentDescription"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Dirección de Envío -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/btn_direccion_envio"
                 android:layout_width="match_parent"
@@ -402,7 +401,6 @@
                     tools:ignore="ContentDescription"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Notificaciones -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/btn_notificaciones"
                 android:layout_width="match_parent"
@@ -448,7 +446,6 @@
                     tools:ignore="ContentDescription"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- BOTÓN CERRAR SESIÓN -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
@@ -481,7 +478,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- BARRA DE NAVEGACIÓN INFERIOR -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/barra_navegacion_inferior"
         android:layout_width="0dp"
