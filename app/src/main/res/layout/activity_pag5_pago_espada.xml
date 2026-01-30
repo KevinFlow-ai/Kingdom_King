@@ -152,7 +152,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Viking Sword ×1"
+                    android:text="@string/viking_sword_1"
                     android:textColor="@color/color_letras_pag5"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -169,7 +169,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/txt_nombre_espada" />
+                    app:layout_constraintTop_toTopOf="@+id/txt_nombre_espada"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/txt_subtotal_acumulado"
@@ -181,7 +182,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_precio_espada" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_precio_espada"
+                    tools:ignore="HardcodedText" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- BLOQUE: RESUMEN DEL PEDIDO -->
@@ -198,13 +200,14 @@
                     android:id="@+id/txt_order_summary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Order Summary"
+                    android:text="@string/order_summary"
                     android:textColor="@color/color_letras_pag5"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                     />
 
                 <View
                     android:id="@+id/linea_decorativa_izq"
@@ -239,17 +242,19 @@
                     android:textColor="@color/color_letras_pag5"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_order_summary" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_order_summary"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/txt_val_subtotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1,200 G"
+                    android:text="@string/_1_200_g"
                     android:textColor="#E0C9A6"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_eti_subtotal"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                     />
 
                 <TextView
                     android:id="@+id/txt_eti_shipping"
@@ -260,7 +265,8 @@
                     android:textColor="@color/color_letras_pag5"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_eti_subtotal" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_eti_subtotal"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/txt_val_shipping"
@@ -270,7 +276,8 @@
                     android:textColor="#E0C9A6"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_eti_shipping"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="HardcodedText" />
 
                 <View
                     android:id="@+id/divisor_resumen"
@@ -291,7 +298,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/divisor_resumen" />
+                    app:layout_constraintTop_toBottomOf="@+id/divisor_resumen"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/txt_val_total"
@@ -302,7 +310,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_eti_total"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="HardcodedText" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- BLOQUE: INFORMACIÓN DE PAGO -->
@@ -324,7 +333,8 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
 
                 <View
                     android:id="@+id/linea_pago_izq"
@@ -373,7 +383,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
-                        android:text="Erik Thorvaldsson"
+                        android:text="@string/erik_thorvaldsson"
                         android:textColor="@color/color_letras_pag5"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="@+id/img_usuario_card"
@@ -391,7 +401,8 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/txt_nombre_titular"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/txt_nombre_titular" />
+                        app:layout_constraintTop_toTopOf="@+id/txt_nombre_titular"
+                        tools:ignore="HardcodedText" />
 
                     <View
                         android:id="@+id/divisor_card_1"
@@ -412,7 +423,8 @@
                         android:textSize="16sp"
                         app:layout_constraintEnd_toStartOf="@+id/img_chip_card"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/divisor_card_1" />
+                        app:layout_constraintTop_toBottomOf="@+id/divisor_card_1"
+                        tools:ignore="HardcodedText" />
 
                     <ImageView
                         android:id="@+id/img_chip_card"
@@ -451,7 +463,8 @@
                         android:textColor="@color/color_letras_pag5"
                         app:layout_constraintBottom_toBottomOf="@+id/img_calendario"
                         app:layout_constraintStart_toEndOf="@+id/img_calendario"
-                        app:layout_constraintTop_toTopOf="@+id/img_calendario" />
+                        app:layout_constraintTop_toTopOf="@+id/img_calendario"
+                        tools:ignore="HardcodedText" />
 
                     <ImageView
                         android:id="@+id/img_cvv"
@@ -472,7 +485,8 @@
                         android:textColor="@color/color_letras_pag5"
                         app:layout_constraintBottom_toBottomOf="@+id/img_cvv"
                         app:layout_constraintStart_toEndOf="@+id/img_cvv"
-                        app:layout_constraintTop_toTopOf="@+id/img_cvv" />
+                        app:layout_constraintTop_toTopOf="@+id/img_cvv"
+                        tools:ignore="HardcodedText" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -522,7 +536,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:text="Pay with Apple Pay"
+                            android:text="@string/pay_with_apple_pay"
                             android:textColor="@color/color_letras_pag5"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -562,7 +576,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:text="Pay with Google Pay"
+                            android:text="@string/pay_with_google_pay"
                             android:textColor="@color/color_letras_pag5"
                             android:textSize="18sp"
                             android:textStyle="bold" />

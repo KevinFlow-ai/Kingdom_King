@@ -142,7 +142,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
         app:layout_constraintTop_toBottomOf="@+id/contenedor_perfil">
 
-        <!-- Icono de Lupa -->
         <ImageView
             android:id="@+id/icon_lupa"
             android:contentDescription="@string/icono_lupa"
@@ -172,7 +171,6 @@
             app:layout_constraintEnd_toStartOf="@+id/icono_lado_buscador"
             app:layout_constraintStart_toEndOf="@+id/icon_lupa" />
 
-        <!-- Icono al lado de buscar (Filtro/Escudo de la derecha) -->
         <ImageView
             android:id="@+id/icono_lado_buscador"
             android:layout_width="wrap_content"
@@ -206,7 +204,6 @@
         app:srcCompat="@drawable/fotohombre" />
 
 
-    <!-- Guía horizontal que marca el final de la sección de categorías (Icono + Texto) -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_final_categorias"
         android:layout_width="wrap_content"
@@ -214,7 +211,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.50342" />
 
-    <!-- Contenedor para distribuir los 4 elementos -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contenedor_categorias_iconos"
         android:layout_width="0dp"
@@ -225,7 +221,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
         app:layout_constraintTop_toBottomOf="@+id/guideline5">
 
-        <!-- Icono de weapons -->
         <LinearLayout
             android:id="@+id/columna_armas"
             android:layout_width="0dp"
@@ -257,7 +252,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- layaour de la columna armaduras -->
         <LinearLayout
             android:id="@+id/columna_armaduras"
             android:layout_width="0dp"
@@ -289,7 +283,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- layaour de la columna de ropa-->
         <LinearLayout
             android:id="@+id/columna_ropa"
             android:layout_width="0dp"
@@ -322,7 +315,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- layaour de la columna de herramientas-->
         <LinearLayout
             android:id="@+id/columna_herramientas"
             android:layout_width="0dp"
@@ -398,7 +390,6 @@
         app:layout_constraintGuide_percent="0.87" />
 
 
-    <!-- layaout/Contenedor para Espada, Armadura...) -->
     <LinearLayout
         android:id="@+id/lay_contenedor_compra"
         android:layout_width="0dp"
@@ -489,7 +480,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- PRODUCTO 2-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/producto_armadura_cuero"
             android:layout_width="0dp"
@@ -545,7 +535,8 @@
                     android:text="900 G"
                     android:textColor="#FFD700"
                     android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <ImageView
@@ -566,7 +557,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- PRODUCTO 3-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/producto_cuerno"
             android:layout_width="0dp"
@@ -622,7 +612,8 @@
                     android:text="500 G"
                     android:textColor="#FFD700"
                     android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <ImageView
@@ -674,7 +665,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/pag3_btn_inferior_home"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/boton_inferior_cartera"

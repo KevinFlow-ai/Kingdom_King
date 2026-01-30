@@ -29,4 +29,11 @@
     <string name="contraseña">Contraseña</string>
     <string name="log_in">LOG IN</string>
     <string name="email">Email</string>
+    <string name="pay_with_apple_pay">Pay with Apple Pay</string>
+    <string name="pay_with_google_pay">Pay with Google Pay</string>
+    <string name="viking_sword_1">Viking Sword ×1</string>
+    <string name="erik_thorvaldsson">Erik Thorvaldsson</string>
+    <string name="continue_shopping">Continue Shopping</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="_1_200_g">1,200 G</string>
 </resources>
