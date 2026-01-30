@@ -1,0 +1,65 @@
+
+    1. wrap_content (Ajuste al contenido) La vista tendrá el tamaño mínimo necesario para que quepa lo que hay dentro (texto, una imagen, etc.).
+        -Si es un botón: El botón será tan ancho como el texto que escribas.
+        -Si es una imagen: El contenedor tomará el tamaño original del archivo de imagen.
+        Uso: Ideal para etiquetas de texto (TextView) o botones donde no quieres desperdiciar espacio.
+
+    2. 0dp (Match Constraint)
+    En ConstraintLayout, 0dp no significa tamaño cero. Significa: "ocupa todo el espacio que te permitan tus restricciones (constraints)".
+        -Cómo funciona: Si atas el lado izquierdo a la pared izquierda y el derecho a la derecha, la vista se estirará para llenar todo ese ancho.
+        Requisito: Obligatoriamente debes definir restricciones (arriba, abajo, izquierda o derecha). Si pones 0dp y no pones restricciones,
+        la vista desaparecerá porque no sabrá hacia dónde estirarse. Documentación de Android sobre Dimensiones.
+
+
+
+    0. -app:layout_constraintDimensionRatio="1:1"  define la relación de aspecto (aspect ratio) de una vista,
+     obligándola a mantener una proporción específica entre su ancho y su alto.
+
+    OPCIONES= En el caso de "1:1", el componente será un cuadrado perfecto, ya que el ancho y el alto serán iguales.
+              Cuadrado (1:1): Útil para fotos de perfil o botones circulares.
+              Panorámico (16:9): Ideal para reproductores de video o banners.
+              Formato Vertical (3:4): Común en tarjetas de productos o pósters
+    REQUISITOS: Dimensión en 0dp: Al menos una de las dimensiones (layout_width o layout_height) debe establecerse en 0dp
+
+    1. -android:clickable="true"
+    Indica si la vista debe reaccionar a los eventos de clic del usuario.
+    Opciones principales:
+        true (reacciona)
+        false (ignora los clics).
+    Nota: Muchos componentes como Button ya lo traen en true por defecto, pero en un Layout debes activarlo manualmente.
+
+    2 android:focusable="true"
+    Permite que la vista reciba el "foco". Esto es esencial para la accesibilidad (lectores de pantalla) y para navegar con teclados o controles remotos.
+    Opciones principales:
+        true
+        false
+        auto (deja que el sistema decida).
+    Variante importante: android:focusableInTouchMode="true". Permite que la vista gane el foco al tocarla por primera vez.
+
+    3. android:foreground="?attr/selectableItemBackgroundBorderless"
+    Define qué se dibuja encima del contenido de la vista. Se usa para mostrar el "Ripple" (el efecto de onda de agua al tocar) sin tapar el fondo.
+    Opciones principales:
+        ?attr/selectableItemBackground: Crea un efecto de clic limitado a los bordes de la vista (un recuadro).
+        ?attr/selectableItemBackgroundBorderless: El efecto de clic es circular y puede extenderse fuera de los límites de la vista.
+
+    4. android:scaleType define cómo se debe ajustar y escalar una imagen dentro de su contenedor (ImageView)
+    Opciones principales:
+        fitCenter: Escala la imagen para que quepa totalmente dentro del contenedor y la centra.
+        centerCrop: Escala la imagen para llenar todo el contenedor. Si la imagen es más grande que el espacio, recorta los sobrantes (arriba/abajo o laterales)
+        para mantener el centro visible
+        fitStart: Igual que fitCenter, pero alinea la imagen a la esquina superior izquierda.
+        fitEnd: Igual que fitCenter, pero alinea la imagen a la esquina inferior derecha.
+        centerInside: Similar a fitCenter, pero si la imagen ya es más pequeña que el contenedor, no la agranda; simplemente la deja en su tamaño original en el centro
+        center: No escala la imagen en absoluto. Simplemente coloca el centro de la imagen en el centro del contenedor
+
+    5. app:layout_constraintHeight_percent="0.6"
+    Este atributo define la altura de una vista como un porcentaje del espacio disponible en su contenedor padre.
+    En tu ejemplo, "0.6" significa que la vista ocupará el 60% de la altura de su padre.
+
+    6. EditText
+        - android:hint="Search": Este es el texto que mencionas. Se muestra cuando el campo está vacío y desaparece automáticamente cuando el usuario empieza a escribir.
+        - android:background="@android:color/transparent": Por defecto, los EditText tienen una línea debajo. Al ponerlo transparente, el usuario verá el diseño de tu "marco_lupa" limpio,
+          como si fuera un campo de búsqueda moderno.
+        - android:inputType="text": Define que el teclado que se abrirá será el de texto normal. Si fuera para números, usarías number
+        - android:importantForAutofill="no": Se añade para evitar avisos del sistema y mejorar la limpieza del código.
+

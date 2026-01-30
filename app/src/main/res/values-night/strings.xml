@@ -25,4 +25,5 @@
     <string name="payment_methods_pag7">Payment Methods</string>
     <string name="notificaciones">Notifications</string>
     <string name="cerrar_sesion">Log Out</string>
+    <string name="view_order">View Order</string>
 </resources>
