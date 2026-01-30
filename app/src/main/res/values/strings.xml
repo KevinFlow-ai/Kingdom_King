@@ -28,4 +28,7 @@
     <string name="notificaciones">Notifications</string>
     <string name="cerrar_sesion">Log Out</string>
     <string name="view_order">View Order</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="log_in">LOG IN</string>
+    <string name="email">Email</string>
 </resources>

@@ -63,3 +63,15 @@
         - android:inputType="text": Define que el teclado que se abrirá será el de texto normal. Si fuera para números, usarías number
         - android:importantForAutofill="no": Se añade para evitar avisos del sistema y mejorar la limpieza del código.
 
+    7. android:textAllCaps="false"
+       es un atributo en el desarrollo de aplicaciones Android que se usa en componentes de texto (como TextView, Button, EditText)
+       para desactivar la conversión automática de todo el texto a mayúsculas
+
+    8. androidx.appcompat.widget.AppCompatButton
+       es una clase en el desarrollo de Android que representa un botón en la interfaz de usuario (UI),
+       pero con funcionalidades mejoradas y retrocompatibilidad para versiones antiguas de Android,
+       permitiendo estilos modernos como tintes de fondo y familias de fuentes que no estaban disponibles
+       en APIs base antiguas, siendo una versión "compatible" del Button estándar
+
+       Es un Botón: Funciona como cualquier botón, para que el usuario interactúe y ejecute una acción.
+       Soporte de Estilos: Permite usar atributos como backgroundTint o fontFamily de forma consistente en diferentes versiones de Android, algo que el Button normal no siempre hacía

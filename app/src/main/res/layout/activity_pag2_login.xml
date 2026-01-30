@@ -8,8 +8,7 @@
     android:background="@drawable/pag2_fondo_login"
     tools:context=".PagB_Login_Activity">
 
-    <!-- Guideline vertical a 5% desde la izquierda
-    0.05 → 5% desde el borde izquierdo-->
+    <!-- Guideline vertical izquierda al 5%-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelinemargIzq"
         android:layout_width="wrap_content"
@@ -17,20 +16,17 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.05" />
 
-    <!-- Guideline vertical a 95% desde la izquierda
-     0.95 → 95% desde el borde izquierdo-->
+    <!-- Guideline vertical Derecha al 95%-->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEnd"
+        android:id="@+id/guidelineDerecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
-    <!-- Guideline horizontal para usuario
-     Guideline horizontal (guidelineTop) → define la
-     posición vertical del EditText en 30% desde arriba.-->
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTopUser"
+        android:id="@+id/guidelineTopEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -38,11 +34,111 @@
 
     <!-- Guideline horizontal para contraseña -->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTopPassword"
+        android:id="@+id/guidelineabajoPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutEmail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/pag2_marco_login"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineabajoPassword"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
+        app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopEmail">
+
+
+        <ImageView
+            android:id="@+id/imageViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="1dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pag2_icono_email"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEmail"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineAbajoPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutPassword"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/pag2_marco_login"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineAbajoPassword"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
+        app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopPassword">
+
+        <ImageView
+            android:id="@+id/imageViewIconoContra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="5dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pag2_icono_password"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/contraseña"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewIconoContra"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -63,27 +159,29 @@
         android:layout_height="0dp"
         android:text="Remenber Me"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTopLogin"
         app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password?"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTopLogin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
         app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="0.606"
+        tools:ignore="HardcodedText" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guidelineTopLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -91,7 +189,7 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/guidelineAbajoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -104,15 +202,15 @@
         android:background="@drawable/pag2_marcos_letra_login"
         android:backgroundTint="@null"
         android:gravity="center"
-        android:text="LOG IN"
+        android:text="@string/log_in"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineAbajoLogin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
         app:layout_constraintHorizontal_bias="0.311"
         app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopLogin"
         app:layout_constraintVertical_bias="0.687" />
 
     <LinearLayout
@@ -120,9 +218,9 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
         app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
-        app:layout_constraintTop_toTopOf="@+id/guideline3">
+        app:layout_constraintTop_toTopOf="@+id/guidelineAbajoLogin">
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -140,7 +238,8 @@
             android:text="Sign in with Apple"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_loggin_google"
@@ -159,7 +258,8 @@
             android:textAllCaps="false"
 
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
@@ -169,101 +269,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/pag2_marco_login"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineTopPassword"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTopUser">
-
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="1dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pag2_icono_email" />
-
-        <EditText
-            android:id="@+id/textView7"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@android:color/transparent"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.43" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/pag2_marco_login"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
-        app:layout_constraintTop_toTopOf="@+id/guideline10">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="5dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pag2_icono_password" />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@android:color/transparent"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
