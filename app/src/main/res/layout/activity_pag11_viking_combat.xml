@@ -74,44 +74,49 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorBtn"
-
-
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/imageView9"
+
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra"
-        app:layout_constraintVertical_bias="0.933"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent="0.12"
         app:srcCompat="@drawable/pag10_home"
         tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
         android:clickable="true"
+
+
         android:focusable="true"
+
         android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorBtn"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra"
         app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent="0.12"
         app:srcCompat="@drawable/pag10_maletin"
         tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.12"
+        app:layout_constraintDimensionRatio="1:1"
         android:layout_marginBottom="18dp"
         android:clickable="true"
         android:focusable="true"
@@ -125,8 +130,10 @@
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.12"
+        app:layout_constraintDimensionRatio="1:1"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -141,13 +148,14 @@
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.12"
+        app:layout_constraintDimensionRatio="1:1"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorBtn"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toEndOf="@+id/imageView13"
