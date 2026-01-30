@@ -333,17 +333,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorBtn"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorBtn"
 
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra"
         app:layout_constraintVertical_bias="0.933"
-        app:srcCompat="@drawable/pag10_home" />
+        app:srcCompat="@drawable/pag10_home"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -358,7 +359,8 @@
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/pag10_maletin" />
+        app:srcCompat="@drawable/pag10_maletin"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -372,7 +374,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView13"
         app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:srcCompat="@drawable/pag8_btn_inferior_grande" />
+        app:srcCompat="@drawable/pag8_btn_inferior_grande"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -387,23 +390,25 @@
         app:layout_constraintStart_toStartOf="@+id/guideline24"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/pag10_obj" />
+        app:srcCompat="@drawable/pag10_obj"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorBtn"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineInferiorBtn"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toEndOf="@+id/imageView13"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/pag10_noti" />
+        app:srcCompat="@drawable/pag10_noti"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
