@@ -146,3 +146,57 @@ MainActivity Comentada: He comentado la declaración de MainActivity tal como so
     </application>
 
 </manifest>
+
+
+
+
+
+===================================================================================================
+
+        PARA PASAR A OTRA PESTAÑA SIN EL METODO.
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            EdgeToEdge.enable(this);
+            setContentView(R.layout.activity_pag3_home);
+
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+
+            // Botón manual: El código del Intent va directo aquí
+            ImageView btnComprarEspada = findViewById(R.id.btn_comprar_espada);
+            btnComprarEspada.setOnClickListener(v -> {
+                Intent intent = new Intent(this, PagD_Espada_Activity.class);
+                startActivity(intent);
+            });
+
+            comprobarPermisoYEmpezar();
+        }
+
+        @Override
+        protected void onVoiceCommand(String comando) {
+            String comandoNormalizado = comando.toLowerCase().trim();
+
+            if (comandoNormalizado.contains("comprar espada")) {
+                hablar("Accediendo a la forja para comprar la espada");
+
+                // Voz: El código del Intent también va directo aquí
+                Intent intent = new Intent(this, PagD_Espada_Activity.class);
+                startActivity(intent);
+            }
+        }
+
+
+        1) En el botón: Sustituimos irAPaginaD() por las dos líneas del Intent.
+        2) En la voz: Hicimos lo mismo dentro del if.
+        3) Borrado: Simplemente eliminamos el bloque private void irAPaginaD() { ... }.
+
+    Ojo: Aunque esto funciona perfectamente, tener el método irAPaginaD se considera "buena práctica"
+    porque si luego quieres cambiar el nombre de la clase de destino, solo lo tendrías que cambiar
+    en un sitio y no en dos. Pero si lo que buscas es código más directo, esta es la forma.
+    Documentación de Intent en Android.
+===================================================================================================
