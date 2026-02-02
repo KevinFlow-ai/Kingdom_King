@@ -5,13 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
+// import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class PagB_Login_Activity extends AppCompatActivity {
+public class PagB_Login_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +45,34 @@ public class PagB_Login_Activity extends AppCompatActivity {
         });
 
 
+        // Botón de inicio de sesión principal (ID: btnLogin)
+        AppCompatButton btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(v -> irAHome());
+
+        comprobarPermisoYEmpezar();
+
+    }
+
+    /**
+     * Navega a la pantalla principal (PagC) y cierra la actual
+     */
+    private void irAHome() {
+        Intent intent = new Intent(this, PagC_Home_Activity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**
+     * Se activa cuando BaseVoiceActivity reconoce un comando de voz
+     */
+    @Override
+    protected void onVoiceCommand(String comando) {
+        // Normalizamos el comando para detectar variaciones con o sin tilde
+        String comandoNormalizado = comando.toLowerCase().trim();
+
+        if (comandoNormalizado.contains("iniciar sesión") || comandoNormalizado.contains("iniciar sesion")) {
+            hablar("Iniciando sesión, bienvenido Jarl");
+            irAHome();
+        }
     }
 }
