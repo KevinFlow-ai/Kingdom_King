@@ -8,7 +8,6 @@
     android:background="@android:color/black"
     tools:context=".PagA_Splash_Screen_Activity">
 
-    <!-- Imagen de fondo que vamos a animar (Empieza en el centro) -->
     <ImageView
         android:id="@+id/imagen_fondo_animada"
         android:layout_width="0dp"
