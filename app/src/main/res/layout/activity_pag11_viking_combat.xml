@@ -152,7 +152,7 @@
         app:layout_constraintVertical_bias="1.0"
         app:layout_constraintWidth_percent="0.12"
         app:srcCompat="@drawable/pag10_maletin"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -265,28 +265,28 @@
         app:layout_constraintGuide_percent="0.41" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline37"
+        android:id="@+id/guideline_top_coment_jarl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.46464646" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline33"
+        android:id="@+id/guideline_coment_jarl_inferior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.54994386" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline34"
+        android:id="@+id/guideline_coment_g"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.640853" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline35"
+        android:id="@+id/guideline_coment_gj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -299,6 +299,229 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8181818" />
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fila_comentario_jarl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top_coment_jarl"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_coment_jarl_inferior"
+        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
+        app:layout_constraintEnd_toStartOf="@+id/guia_derecha">
+
+        <ImageView
+            android:id="@+id/img_usuario_jarl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pag11_foto_perfil_jarl"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/txt_nombre_jarl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/jarl_erik"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/img_usuario_jarl"
+            app:layout_constraintTop_toTopOf="@+id/img_usuario_jarl" />
+
+        <TextView
+            android:id="@+id/txt_mensaje_jarl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/great_fight_the_axe_mote_win"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_nombre_jarl"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nombre_jarl"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fila_comentario_gudrun"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline_coment_jarl_inferior"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_coment_g"
+        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
+        app:layout_constraintEnd_toStartOf="@+id/guia_derecha">
+
+        <ImageView
+            android:id="@+id/img_usuario_gudrun"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/pag11_foto_perfil_gudrun"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txt_nombre_gudrun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/gudrun"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/img_usuario_gudrun"
+            app:layout_constraintTop_toTopOf="@+id/img_usuario_gudrun" />
+
+        <TextView
+            android:id="@+id/txt_mensaje_gudrun"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/for_honor_and_glory"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_nombre_gudrun"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nombre_gudrun"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fila_comentario_gjonn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline_coment_g"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_coment_gj"
+        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
+        app:layout_constraintEnd_toStartOf="@+id/guia_derecha">
+
+        <ImageView
+            android:id="@+id/img_usuario_gjonn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/pag11_foto_perfil_gjonn"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txt_nombre_gjonn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/gjonn"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/img_usuario_gjonn"
+            app:layout_constraintTop_toTopOf="@+id/img_usuario_gjonn" />
+
+        <TextView
+            android:id="@+id/txt_mensaje_gjonn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="This is intense ✋"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_nombre_gjonn"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nombre_gjonn"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="HardcodedText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fila_comentario_batal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline_coment_gj"
+        app:layout_constraintBottom_toTopOf="@+id/guideline36"
+        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
+        app:layout_constraintEnd_toStartOf="@+id/guia_derecha">
+
+        <ImageView
+            android:id="@+id/img_usuario_batal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/pag11_foto_perfil_sara"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txt_nombre_batal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/batal"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/img_usuario_batal"
+            app:layout_constraintTop_toTopOf="@+id/img_usuario_batal" />
+
+        <TextView
+            android:id="@+id/txt_mensaje_batal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/skal_ot_the_strong_preval"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_nombre_batal"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nombre_batal"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/seccion_input_comentario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline36"
+        app:layout_constraintBottom_toTopOf="@+id/guia_inferior_barra"
+        app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
+        app:layout_constraintEnd_toStartOf="@+id/guia_derecha">
+
+        <EditText
+            android:id="@+id/et_escribir_comentario"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/pag11_marco_text_comment"
+            android:hint="@string/text_comments"
+            android:paddingStart="16dp"
+            android:textColor="@color/color_letras_pag5"
+            android:textColorHint="@color/color_letras_pag5"
+            android:textSize="16sp"
+            app:layout_constraintHeight_percent="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_enviar_comentario"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="Autofill,RtlSymmetry,TextFields" />
+
+        <ImageView
+            android:id="@+id/btn_enviar_comentario"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/et_escribir_comentario"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.7"
+            app:layout_constraintTop_toTopOf="@+id/et_escribir_comentario"
+            app:srcCompat="@drawable/pag11_icono_lado_text"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
