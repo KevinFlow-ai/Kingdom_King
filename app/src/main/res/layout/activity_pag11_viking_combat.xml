@@ -220,21 +220,21 @@
 
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/image_corazon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="3dp"
             android:layout_marginBottom="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintEnd_toStartOf="@+id/textView_num"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/pag10_corazon"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView_num"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

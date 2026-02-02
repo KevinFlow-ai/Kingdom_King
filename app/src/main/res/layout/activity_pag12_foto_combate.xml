@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PagL_FotoCombate_Activity"
+    android:background="@drawable/pag12_fondo_ampliada">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Izq_corazon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69829684" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Der_Corazon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_inferior_corazon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07295174" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Top_Corazon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.019079685" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedor_corazon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_inferior_corazon"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_Der_Corazon"
+        app:layout_constraintStart_toStartOf="@+id/guideline_Izq_corazon"
+        app:layout_constraintTop_toTopOf="@+id/guideline_Top_Corazon">
+
+
+        <ImageView
+            android:id="@+id/image_corazon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView_num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pag10_corazon"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="253"
+            android:textColor="@color/color_letras_pag5"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.476"
+            tools:ignore="HardcodedText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
