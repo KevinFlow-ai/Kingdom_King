@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 
-public class PagE_Pago_Espada_Activity extends AppCompatActivity {
+public class PagE_Pago_Espada_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +28,45 @@ public class PagE_Pago_Espada_Activity extends AppCompatActivity {
             return insets; // Solo retornamos los insets quitamos los padding, lo que esta en comentarios
         });
 
+
+        // boton manual para cuando pulse el flecha atras vuelva a la pantalla anterior
         ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
         btnFlechaAtras.setOnClickListener(v -> {
             Intent intent = new Intent(this, PagD_Espada_Activity.class);
             startActivity(intent);
         });
+
+
+
+        // boton manual para cuando pulse el contenedor de pagar de apple pase a la siguiente pantalla
+        ConstraintLayout btnComprarEspada_Google = findViewById(R.id.btn_pago_apple);
+        btnComprarEspada_Google.setOnClickListener(v -> irAPaginaF());
+
+        // Iniciamos la escucha de voz
+        comprobarPermisoYEmpezar();
+
+    }
+
+
+    private void irAPaginaF() {
+        Intent intent = new Intent(this, PagF_Payment_Activity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * ACCIÓN POR VOZ: Control de comandos detectados
+     */
+    @Override
+    protected void onVoiceCommand(String comando) {
+        String comandoNormalizado = comando.toLowerCase().trim();
+
+        // Si el usuario dice "comprar"
+        if (comandoNormalizado.contains("pagar")) {
+            hablar("Procesando compra");
+            irAPaginaF();
+            return;
+        }
+
+
     }
 }

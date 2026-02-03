@@ -506,7 +506,7 @@
 
                 <!-- BOTONES PAGO APPLE Y GOOGLE -->
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btn_pago_apple"
+                        android:id="@+id/btn_pago_apple"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_marginTop="16dp"
