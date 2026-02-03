@@ -342,6 +342,7 @@
 
         <!-- LADO DERECHO: Icono Moneda y Precio -->
         <LinearLayout
+            android:id="@+id/contenedor_precio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

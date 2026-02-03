@@ -2,7 +2,10 @@
 
 package com.example.kingdom_king;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
@@ -23,6 +26,12 @@ public class PagE_Pago_Espada_Activity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
              */
             return insets; // Solo retornamos los insets quitamos los padding, lo que esta en comentarios
+        });
+
+        ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
+        btnFlechaAtras.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PagD_Espada_Activity.class);
+            startActivity(intent);
         });
     }
 }
