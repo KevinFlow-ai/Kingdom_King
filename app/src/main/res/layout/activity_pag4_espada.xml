@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.0" />
+        app:layout_constraintGuide_percent="0.04" />
 
     <!-- Guideline que envuelve los detalles de la espada -->
     <androidx.constraintlayout.widget.Guideline
@@ -80,11 +80,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintHeight_percent="0.9"
             app:srcCompat="@drawable/fleecha"
             tools:ignore="TouchTargetSizeCheck" />
 
-        <!-- Nombre espada -->
         <TextView
             android:id="@+id/titulo_espada"
             android:layout_width="0dp"
@@ -99,7 +98,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- Icono moneda -->
         <ImageView
             android:id="@+id/img_moneda"
             android:layout_width="0dp"
@@ -110,25 +108,23 @@
             app:layout_constraintEnd_toStartOf="@id/cantidad_monedas"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintHeight_percent="0.7"
             app:layout_constraintDimensionRatio="1:1"
             app:srcCompat="@drawable/moneda" />
 
 
-        <!-- Cantidad monedas -->
         <TextView
             android:id="@+id/cantidad_monedas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1"
             android:textColor="@color/color_letras_pag4"
-            android:textSize="18sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@id/img_carrito_compras"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="HardcodedText" />
 
-        <!-- Carrito -->
         <ImageView
             android:id="@+id/img_carrito_compras"
             android:layout_width="0dp"
@@ -138,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHeight_percent="0.7"
+            app:layout_constraintHeight_percent="0.9"
             app:layout_constraintDimensionRatio="1:1"
             app:srcCompat="@drawable/carro_pag4" />
 
@@ -260,30 +256,27 @@
             android:text="@string/detalles_especificacion_espada_pag4" />
     </LinearLayout>
 
-    <!-- Esta guía define el inicio de la franja decorativa inferior (aprox al 92% de la pantalla) -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_marco_inferior_inicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9001122" />
+        app:layout_constraintGuide_percent="0.88" />
 
-    <!-- Esta guía define el margen de seguridad antes del borde físico del móvil -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_marco_inferior_fin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.99" />
+        app:layout_constraintGuide_percent="0.95" />
 
-    <!-- 1. GUÍA PARA LA SECCIÓN DE COMPRA (QUANTITY / PRECIO) -->
-    <!-- Define dónde empieza el bloque de madera (aprox al 83% de la pantalla) -->
+
 
     <TextView
         android:id="@+id/tv_checkout_boton"
         android:layout_width="137dp"
         android:layout_height="33dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
@@ -306,7 +299,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.83" />
 
-    <!-- 2. CONTENEDOR PRINCIPAL DEL MARCO DE MADERA -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contenedor_compra"
         android:layout_width="0dp"
@@ -318,7 +310,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_izquierdo"
         app:layout_constraintEnd_toEndOf="@+id/guide_vertical_derecha">
 
-        <!-- Línea invisible en el medio para separar Quantity de Precio -->
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guia_central_madera"
             android:layout_width="wrap_content"
@@ -326,7 +317,6 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.4" />
 
-        <!-- LADO IZQUIERDO: Quantity -->
         <TextView
             android:id="@+id/tv_cantidad_texto"
             android:layout_width="wrap_content"
@@ -340,7 +330,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guia_central_madera" />
 
-        <!-- LADO DERECHO: Icono Moneda y Precio -->
         <LinearLayout
             android:id="@+id/contenedor_precio"
             android:layout_width="wrap_content"
@@ -377,7 +366,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_percent="0.89" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
