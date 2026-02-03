@@ -29,5 +29,15 @@ public class PagD_Espada_Activity extends AppCompatActivity {
             Intent intent = new Intent(this, PagC_Home_Activity.class);
             startActivity(intent);
         });
+
+        /*
+            ************POR SINO FUNCIONA LO PRIMERO******************
+             ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
+        btnFlechaAtras.setOnClickListener(v -> {
+            // Esto cierra la pestaña actual y te "suelta" en la anterior
+            finish();
+        });
+         */
+
     }
 }

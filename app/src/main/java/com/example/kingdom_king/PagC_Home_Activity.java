@@ -30,6 +30,11 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
         ImageView btnComprarEspada = findViewById(R.id.btn_comprar_espada);
         btnComprarEspada.setOnClickListener(v -> irAPaginaD());
 
+        // Botón manual para ir a la pagina de usuario
+        ImageView btnperfilusuario = findViewById(R.id.imagenPerfilUsuario);
+        btnperfilusuario.setOnClickListener(v -> irAPaginaG());
+
+
         // Iniciar la escucha de comandos de voz
         comprobarPermisoYEmpezar();
     }
@@ -42,6 +47,11 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
         startActivity(intent);
     }
 
+    private void irAPaginaG() {
+        Intent intent = new Intent(this, PagG_MyAccount_Activity.class);
+        startActivity(intent);
+    }
+
     /**
      * Manejo de comandos de voz detectados
      * @param comando Texto reconocido por el SpeechToText
@@ -50,10 +60,42 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
     protected void onVoiceCommand(String comando) {
         String comandoNormalizado = comando.toLowerCase().trim();
 
-        // Si el usuario dice "comprar espada"
+        // 1. Si el comando está vacío o es muy corto (ruido), ignoramos
+        if (comandoNormalizado.length() < 3) return;
+
         if (comandoNormalizado.contains("comprar espada")) {
             hablar("Accediendo a la forja para comprar la espada");
             irAPaginaD();
+            return; // <--- AGREGA ESTO: Detiene la ejecución aquí
         }
+
+        if (comandoNormalizado.contains("mi usuario")) {
+            hablar("Abriendo tu perfil de usuario");
+            irAPaginaG();
+            return; // <--- AGREGA ESTO: Evita que llegue al else de abajo
+        }
+
+        // 2. Solo si NO entró en ninguno de los anteriores, ejecuta el error
+        hablar("Comando no reconocido, intenta de nuevo"); // SI DA PROBLEMAS LOS COMANDO DE VOZ ELIMINAR ESTO Y YA
     }
+
+
 }
+
+/*
+    =======EXPLICACION DEL COMANDO DE if (comandoNormalizado.length() < 3) return;====
+
+    Filtro de ruido: El if (comandoNormalizado.length() < 3) return; evita que sonidos como un
+     suspiro o un golpe (que el STT interpreta como un punto o una letra) activen el mensaje de error
+
+ */
+
+
+/*
+
+    SI EL ELSE DE COMANDO NO ENCONTRADO NO FUNCIONA
+
+    else if (comandoNormalizado.length() > 4) {
+        hablar("No entendí: " + comando);
+    }
+ */
