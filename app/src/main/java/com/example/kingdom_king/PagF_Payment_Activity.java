@@ -41,17 +41,29 @@ public class PagF_Payment_Activity extends BaseVoiceActivity {
 
 
     @Override
-    protected void onVoiceCommand(String comando) {
-        String comandoNormalizado = comando.toLowerCase().trim();
-
-        // Si el usuario dice "comprar"
-        if (comandoNormalizado.contains("continuar pagando")) {
-            hablar("compra realizada, volviendo a la pagina principal");
-            irAPaginaHome();
-
-        }
-
-
+    protected void onResume() {
+        super.onResume();
+        // Esto activa el micrófono cada vez que vuelves a la pantalla
+        comprobarPermisoYEmpezar();
     }
+
+    @Override
+    protected void onVoiceCommand(String comando) {
+        // Eliminamos tildes y normalizamos para evitar fallos por "continúa" vs "continuar"
+        String comandoNormalizado = comando.toLowerCase().trim()
+                .replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u");
+
+        // Si el comando contiene cualquiera de estas palabras clave
+        if (comandoNormalizado.contains("comprando") ||
+                comandoNormalizado.contains("continuar")) {
+
+            hablar("Volviendo al inicio");
+            irAPaginaHome();
+        } else {
+            // Solo hablamos si no hemos reconocido nada, para no interrumpir
+            hablar("No he entendido " + comando + ". Prueba a decir continuar comprando");
+        }
+    }
+
 
 }
