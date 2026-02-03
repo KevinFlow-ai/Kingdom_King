@@ -1,15 +1,14 @@
 package com.example.kingdom_king;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class PagH_Edit_Profile_Activity extends AppCompatActivity {
+public class PagH_Edit_Profile_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +30,37 @@ public class PagH_Edit_Profile_Activity extends AppCompatActivity {
             // Esto cierra la pestaña actual y te "suelta" en la anterior
             finish();
         });
+
+        // Botón manual para ir a ver pedidos
+        ConstraintLayout btnVerMispedidos = findViewById(R.id.btn_mis_pedidos);
+        btnVerMispedidos.setOnClickListener(v -> irAPaginaDeVerPedidos());
+
+
+
+        comprobarPermisoYEmpezar();
+
     }
+
+
+
+    private void irAPaginaDeVerPedidos() {
+        Intent intent = new Intent(this, PagI_MyOders_Activity.class);
+        startActivity(intent);
+    }
+
+
+    @Override
+    protected void onVoiceCommand(String comando) {
+        String comandoNormalizado = comando.toLowerCase().trim();
+
+        if (comandoNormalizado.contains("pedidos")) {
+            hablar("procesando pedidos");
+            irAPaginaDeVerPedidos();
+
+        }
+
+
+
+    }
+
 }

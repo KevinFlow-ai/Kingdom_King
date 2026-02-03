@@ -1,6 +1,7 @@
 package com.example.kingdom_king;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,11 @@ public class PagI_MyOders_Activity extends AppCompatActivity {
 
              */
             return insets;
+        });
+
+        ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
+        btnFlechaAtras.setOnClickListener(v -> {
+            finish();
         });
     }
 }
