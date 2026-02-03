@@ -6,11 +6,12 @@ import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class PagK_VikingCombat_Activity extends AppCompatActivity {
+public class PagK_VikingCombat_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +34,39 @@ public class PagK_VikingCombat_Activity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+        // Botón manual para ver foto de combate vikingo
+        ImageView ImagenCombateAmpliado = findViewById(R.id.imageHombres);
+        ImagenCombateAmpliado.setOnClickListener(v -> VerCombate());
+
+
+        // Botón manual para ver foto de combate vikingo
+        ConstraintLayout ConstraintFotoAmpliadoCombate = findViewById(R.id.combate);
+        ConstraintFotoAmpliadoCombate.setOnClickListener(v -> VerCombate());
+
+        comprobarPermisoYEmpezar();
+
+
     }
+
+
+    private void VerCombate() {
+        Intent intent = new Intent(this, PagL_FotoCombate_Activity.class);
+        startActivity(intent);
+    }
+
+
+    @Override
+    protected void onVoiceCommand(String comando) {
+        String comandoNormalizado = comando.toLowerCase().trim();
+
+        if (comandoNormalizado.contains("ampliar")) {
+            hablar("Abriendo la foto ampliada");
+            VerCombate();
+
+        }
+
+
+    }
+
 }
