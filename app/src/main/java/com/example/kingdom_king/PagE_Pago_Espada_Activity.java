@@ -21,6 +21,7 @@ public class PagE_Pago_Espada_Activity extends BaseVoiceActivity {
 
         // HE ELIMINADO EL SETPADDING AQUÍ PARA QUE NO SE DESPLACE
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+
             /*
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -39,8 +40,15 @@ public class PagE_Pago_Espada_Activity extends BaseVoiceActivity {
 
 
         // boton manual para cuando pulse el contenedor de pagar de apple pase a la siguiente pantalla
-        ConstraintLayout btnComprarEspada_Google = findViewById(R.id.btn_pago_apple);
+        ConstraintLayout btnComprarEspada_Apple = findViewById(R.id.btn_pago_apple);
+        btnComprarEspada_Apple.setOnClickListener(v -> irAPaginaF());
+
+        // boton manual para cuando pulse el contenedor de pagar de Google pase a la siguiente pantalla
+        ConstraintLayout btnComprarEspada_Google = findViewById(R.id.btn_pago_google);
         btnComprarEspada_Google.setOnClickListener(v -> irAPaginaF());
+
+
+
 
         // Iniciamos la escucha de voz
         comprobarPermisoYEmpezar();
@@ -53,9 +61,7 @@ public class PagE_Pago_Espada_Activity extends BaseVoiceActivity {
         startActivity(intent);
     }
 
-    /**
-     * ACCIÓN POR VOZ: Control de comandos detectados
-     */
+
     @Override
     protected void onVoiceCommand(String comando) {
         String comandoNormalizado = comando.toLowerCase().trim();
@@ -65,6 +71,13 @@ public class PagE_Pago_Espada_Activity extends BaseVoiceActivity {
             hablar("Procesando compra");
             irAPaginaF();
             return;
+        }
+
+        // Si el usuario dice "comprar"
+        if (comandoNormalizado.contains("pagar con google")) {
+            hablar("Procesando compra");
+            irAPaginaF();
+
         }
 
 
