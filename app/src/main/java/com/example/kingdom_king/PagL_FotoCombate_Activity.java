@@ -1,5 +1,6 @@
 package com.example.kingdom_king;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -8,7 +9,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class PagL_FotoCombate_Activity extends AppCompatActivity {
+import java.util.Arrays;
+import java.util.List;
+
+public class PagL_FotoCombate_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +27,38 @@ public class PagL_FotoCombate_Activity extends AppCompatActivity {
              */
             return insets;
         });
+
+
     }
+
+    private void irAHome() {
+        Intent intent = new Intent(this, PagC_Home_Activity.class);
+        startActivity(intent);
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Aseguramos que empiece a escuchar al entrar/volver a la actividad
+        comprobarPermisoYEmpezar();
+    }
+
+    @Override
+    protected void onVoiceCommand(String comando) {
+        String cmd = comando.toLowerCase().trim();
+
+        // Definimos los sinónimos
+        List<String> sinonimosVolver = Arrays.asList("volver", "regresar", "bolber", "bolve", "volve");
+
+        // Verificamos si alguna de esas palabras está en el comando
+        for (String palabra : sinonimosVolver) {
+            if (cmd.contains(palabra)) {
+                hablar("Volviendo al inicio");
+                irAHome();
+                break; // Salimos del bucle una vez que lo encuentre
+            }
+        }
+    }
+
 }
