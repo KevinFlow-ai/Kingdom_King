@@ -1,14 +1,12 @@
 package com.example.kingdom_king;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 
 import androidx.activity.EdgeToEdge;
 // import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -38,6 +36,10 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
         ImageView btnTransmision = findViewById(R.id.boton_inferior_notificaciones);
         btnTransmision.setOnClickListener(v -> irAPaginaJ());
 
+        // Botón manual para ir a la pagina de Incursiones o Raid
+        ImageView btnRaid = findViewById(R.id.boton_inferior_cartera);
+        btnRaid.setOnClickListener(v -> irAPaginaM());
+
 
         // Iniciar la escucha de comandos de voz
         comprobarPermisoYEmpezar();
@@ -58,6 +60,13 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
 
     private void irAPaginaJ() {
         Intent intent = new Intent(this, PagJ_Live_Activity.class);
+        startActivity(intent);
+        //finish(); esto cierra la app
+
+    }
+
+    private void irAPaginaM() {
+        Intent intent = new Intent(this, PagM_Raid_Incursiones_Activity.class);
         startActivity(intent);
         //finish(); esto cierra la app
 
@@ -89,6 +98,12 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
         if (comandoNormalizado.contains("transmisión")) {
             hablar("Abriendo Transmisiones");
             irAPaginaJ();
+            return; // <--- AGREGA ESTO: Evita que llegue al else de abajo
+        }
+
+        if (comandoNormalizado.contains("incursión")) {
+            hablar("Abriendo Incursiones");
+            irAPaginaM();
             return; // <--- AGREGA ESTO: Evita que llegue al else de abajo
         }
 
