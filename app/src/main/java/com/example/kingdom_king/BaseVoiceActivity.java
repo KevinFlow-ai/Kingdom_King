@@ -77,6 +77,31 @@ public abstract class BaseVoiceActivity extends AppCompatActivity {
     }
 
     private void manejarResultados(Bundle results) {
+        ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+        if (matches == null || matches.isEmpty()) return;
+
+        // 1. Tomamos solo el primer resultado (el más probable)
+        String textoMasProbable = matches.get(0);
+        String normalizado = textoMasProbable.toLowerCase(new Locale("es", "ES")).trim();
+
+        // 2. Detenemos el reconocimiento para que no procese ruidos mientras cambia de pantalla
+        if (speechRecognizer != null) {
+            speechRecognizer.stopListening();
+            isListening = false;
+        }
+
+        // 3. Ejecutamos el comando una sola vez
+        onVoiceCommand(normalizado);
+    }
+
+
+    /*
+
+        ESTE ES EL CODIGO ORIGINAL ESTO QUE ESTA COMENTADO, EL DE ARRIBA ES OTRO, POR SI EL CODIGO DE ARRIBA NO FUNCIONA
+        POR SI SALE EL ERROR DE COMANDO NO RECONOCIDO, INTENTALO DE NUEVO
+
+
+        private void manejarResultados(Bundle results) {
         ArrayList<String> matches =
                 results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
         if (matches == null || matches.isEmpty()) return;
@@ -86,6 +111,9 @@ public abstract class BaseVoiceActivity extends AppCompatActivity {
             onVoiceCommand(normalizado);
         }
     }
+
+
+     */
 
     protected abstract void onVoiceCommand(String comando);
 
