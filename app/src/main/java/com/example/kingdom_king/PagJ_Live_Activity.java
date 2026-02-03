@@ -6,11 +6,12 @@ import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class PagJ_Live_Activity extends AppCompatActivity {
+public class PagJ_Live_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +35,46 @@ public class PagJ_Live_Activity extends AppCompatActivity {
         });
 
 
+        // Botón manual para ver el combate vikingo
+        ConstraintLayout VerFotoCombate = findViewById(R.id.constraintLayout_hombre_combate);
+        VerFotoCombate.setOnClickListener(v -> VerCombate());
+
+
+        // Botón manual para ver el combate vikingo
+        ImageView ImagenCombate = findViewById(R.id.imagen_hombre_lucha);
+        ImagenCombate.setOnClickListener(v -> VerCombate());
+
+
+        // Botón manual para ver el combate vikingo
+        ConstraintLayout ConstraintTextoCombate = findViewById(R.id.texto_combate);
+        ConstraintTextoCombate.setOnClickListener(v -> VerCombate());
+
+        comprobarPermisoYEmpezar();
+
+
     }
-}
+
+
+
+
+    private void VerCombate() {
+        Intent intent = new Intent(this, PagK_VikingCombat_Activity.class);
+        startActivity(intent);
+    }
+
+
+    @Override
+    protected void onVoiceCommand(String comando) {
+        String comandoNormalizado = comando.toLowerCase().trim();
+
+        if (comandoNormalizado.contains("combate")) {
+            hablar("Abriendo el combate vikingo");
+            VerCombate();
+
+        }
+
+
+    }
+
+
+    }

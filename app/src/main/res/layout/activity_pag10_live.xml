@@ -208,6 +208,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/texto_combate"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clickable="true"
@@ -392,6 +393,7 @@
         app:layout_constraintGuide_percent="0.62" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout_hombre_combate"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
@@ -406,7 +408,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imagen_hombre_lucha"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="25dp"

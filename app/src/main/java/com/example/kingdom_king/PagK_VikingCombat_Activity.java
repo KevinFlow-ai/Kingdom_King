@@ -1,6 +1,8 @@
 package com.example.kingdom_king;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,5 +25,13 @@ public class PagK_VikingCombat_Activity extends AppCompatActivity {
              */
             return insets;
         });
+
+        // Botón manual: PARA VOLVER ATRAS CON EL BOTON, Esto vuelve al home(pagC)
+        ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
+        btnFlechaAtras.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PagJ_Live_Activity.class);
+            startActivity(intent);
+        });
+
     }
 }
