@@ -34,6 +34,10 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
         ImageView btnperfilusuario = findViewById(R.id.imagenPerfilUsuario);
         btnperfilusuario.setOnClickListener(v -> irAPaginaG());
 
+        // Botón manual para ir a la pagina de live
+        ImageView btnTransmision = findViewById(R.id.boton_inferior_notificaciones);
+        btnTransmision.setOnClickListener(v -> irAPaginaJ());
+
 
         // Iniciar la escucha de comandos de voz
         comprobarPermisoYEmpezar();
@@ -50,6 +54,13 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
     private void irAPaginaG() {
         Intent intent = new Intent(this, PagG_MyAccount_Activity.class);
         startActivity(intent);
+    }
+
+    private void irAPaginaJ() {
+        Intent intent = new Intent(this, PagJ_Live_Activity.class);
+        startActivity(intent);
+        //finish(); esto cierra la app
+
     }
 
     /**
@@ -75,8 +86,14 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
             return; // <--- AGREGA ESTO: Evita que llegue al else de abajo
         }
 
+        if (comandoNormalizado.contains("transmisión")) {
+            hablar("Abriendo Transmisiones");
+            irAPaginaJ();
+            return; // <--- AGREGA ESTO: Evita que llegue al else de abajo
+        }
+
         // 2. Solo si NO entró en ninguno de los anteriores, ejecuta el error
-        hablar("Comando no reconocido, intenta de nuevo"); // SI DA PROBLEMAS LOS COMANDO DE VOZ ELIMINAR ESTO Y YA
+        hablar("Comando no reconocido, intentalo de nuevo"); // SI DA PROBLEMAS LOS COMANDO DE VOZ ELIMINAR ESTO Y YA
     }
 
 
