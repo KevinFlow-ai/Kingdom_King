@@ -1,6 +1,7 @@
 package com.example.kingdom_king;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,12 @@ public class PagH_Edit_Profile_Activity extends AppCompatActivity {
              */
 
             return insets;
+        });
+
+        ImageView btnFlechaAtras = findViewById(R.id.btn_volver);
+        btnFlechaAtras.setOnClickListener(v -> {
+            // Esto cierra la pestaña actual y te "suelta" en la anterior
+            finish();
         });
     }
 }
