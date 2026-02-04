@@ -14,9 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kingdom_King">
-        <activity
-            android:name=".PagO_Joined_Succes_Activity"
-            android:exported="false" />
+
         <!-- 1. SPLASH SCREEN: El único punto de entrada oficial de la app -->
         <activity
             android:name=".PagA_Splash_Screen_Activity"
@@ -65,6 +63,9 @@
             android:exported="false" />
         <activity
             android:name=".PagN_Raid_England_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".PagO_Joined_Succes_Activity"
             android:exported="false" />
     </application>
 
