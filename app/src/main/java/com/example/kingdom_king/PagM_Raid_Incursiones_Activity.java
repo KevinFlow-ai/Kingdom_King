@@ -1,14 +1,15 @@
 package com.example.kingdom_king;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class PagM_Raid_Incursiones_Activity extends AppCompatActivity {
+public class PagM_Raid_Incursiones_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,5 +25,53 @@ public class PagM_Raid_Incursiones_Activity extends AppCompatActivity {
              */
             return insets;
         });
+
+
+        // Botón manual: PARA VOLVER ATRÁS (Vuelve a PagC)
+        ImageView btnFlechaAtras = findViewById(R.id.btn_volver_atras);
+        btnFlechaAtras.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PagC_Home_Activity.class);
+            startActivity(intent);
+        });
+
+
+        // boton manual para pasar a la pestaña de las Raid
+        ConstraintLayout btnIrARaid = findViewById(R.id.contenedor_raid_england);
+        btnIrARaid.setOnClickListener(v -> irAPaginaRaidInglaterra());
+
+
+
+
+        ConstraintLayout btnJoin = findViewById(R.id.btn_join_england);
+        btnJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
+
+        ImageView imagenJoin = findViewById(R.id.img_raid_england);
+        imagenJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
+
+
+
+        comprobarPermisoYEmpezar();
+
     }
+
+
+    private void irAPaginaRaidInglaterra() {
+        Intent intent = new Intent(this, PagN_Raid_England_Activity.class);
+        startActivity(intent);
+    }
+
+
+    @Override
+    protected void onVoiceCommand(String comando) {
+        String comandoNormalizado = comando.toLowerCase().trim();
+
+        if (comandoNormalizado.contains("inglaterra"))  {
+            hablar("abriendo raid inglaterra");
+            irAPaginaRaidInglaterra();
+
+        }
+
+
+    }
+
 }
