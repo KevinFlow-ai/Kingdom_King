@@ -74,4 +74,25 @@
        en APIs base antiguas, siendo una versión "compatible" del Button estándar
 
        Es un Botón: Funciona como cualquier botón, para que el usuario interactúe y ejecute una acción.
-       Soporte de Estilos: Permite usar atributos como backgroundTint o fontFamily de forma consistente en diferentes versiones de Android, algo que el Button normal no siempre hacía
+       Soporte de Estilos: Permite usar atributos como backgroundTint o fontFamily de forma consistente en
+       diferentes versiones de Android, algo que el Button normal no siempre hacía
+
+    9. android:scrollbars="none" sirve para ocultar visualmente las barras de desplazamiento
+    (tanto la vertical como la horizontal)
+
+    10. android:adjustViewBounds="true"
+        Esta propiedad es el "salvavidas" cuando quieres que una imagen mantenga sus proporciones sin dejar espacios vacíos raros.
+        En términos simples: android:adjustViewBounds="true" ajusta los límites (el marco)
+        del ImageView para que coincidan exactamente con las dimensiones de la imagen después
+        de que esta se haya escalado.
+
+        1) Evita espacios en blanco: Si tu imagen es muy alta y el contenedor es ancho,
+        normalmente el ImageView deja huecos a los lados. Con esto, el "marco" se encoge
+        para pegar los bordes a la imagen.
+        2) Mantiene la proporción: Trabaja junto con maxWidth y maxHeight.
+        Si la imagen debe hacerse más pequeña para caber, el ImageView reducirá su propio
+        tamaño para no ocupar espacio innecesario en el layout.
+        3) Layouts adaptativos: Es vital cuando usas wrap_content en una de las
+        dimensiones (ancho o alto), ya que obliga al componente a "re-calcular" su tamaño real basándose en el dibujo (drawable).
+
+
