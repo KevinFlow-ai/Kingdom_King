@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -28,6 +29,10 @@ public class PagL_FotoCombate_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+
+        // Botón manual para ver foto de combate vikingo
+        ConstraintLayout corazon_home = findViewById(R.id.contenedor_corazon);
+        corazon_home.setOnClickListener(v -> irAHome());
 
     }
 
