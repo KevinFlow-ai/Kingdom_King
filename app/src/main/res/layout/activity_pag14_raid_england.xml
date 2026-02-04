@@ -96,7 +96,8 @@
             app:layout_constraintStart_toEndOf="@+id/txt_titulo_raid"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.166"
-            app:srcCompat="@drawable/pag14_text" />
+            app:srcCompat="@drawable/pag14_text"
+            tools:ignore="ContentDescription" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -149,7 +150,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.12"
             app:srcCompat="@drawable/pag10_home"
-            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/icon_maletin"
@@ -229,7 +230,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pag14_foto_raid_ampliado" />
+            app:srcCompat="@drawable/pag14_foto_raid_ampliado"
+            tools:ignore="ContentDescription" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline29"
@@ -303,19 +305,21 @@
 
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/JoinRaidd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Join Raid"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:text="@string/join_raid"
                 android:textColor="#E0C9A6"
-                android:textSize="26sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
-
-
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
