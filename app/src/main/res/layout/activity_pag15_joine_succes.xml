@@ -104,7 +104,7 @@
             android:id="@+id/txt_mensaje_detalle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Prepare your weapons, Jarl. The raid is about to begin!"
+            android:text="@string/you_have_successfully_joined_the_viking_raid_prepare_for_battle"
             android:textColor="#E0C9A6"
             android:textSize="16sp"
             android:alpha="0.8"
