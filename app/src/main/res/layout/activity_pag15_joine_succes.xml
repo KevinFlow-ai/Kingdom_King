@@ -80,7 +80,7 @@
             android:id="@+id/txt_titulo_unido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Joined Successfully"
+            android:text="@string/joined_successfully"
             android:textColor="#E0C9A6"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -95,8 +95,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guia_superior_btn_join"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_drc_join"
-        app:layout_constraintStart_toStartOf="@+id/guidelin_vertical_btn_join"
+        app:layout_constraintEnd_toStartOf="@+id/guideline28"
+        app:layout_constraintStart_toStartOf="@+id/guideline27"
         app:layout_constraintTop_toTopOf="@+id/guideline_inferior_txt">
 
 
@@ -104,15 +104,16 @@
             android:id="@+id/txt_mensaje_detalle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="105dp"
+            android:gravity="center"
             android:text="@string/texto_pag15"
             android:textColor="#E0C9A6"
             android:textSize="16sp"
-            android:alpha="0.8"
-            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -130,7 +131,7 @@
             android:id="@+id/txt_btn_volver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OK"
+            android:text="@string/ok"
             android:textColor="#E0C9A6"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -139,6 +140,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1459854" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
