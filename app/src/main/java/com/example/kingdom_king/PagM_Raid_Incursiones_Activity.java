@@ -49,6 +49,9 @@ public class PagM_Raid_Incursiones_Activity extends BaseVoiceActivity {
         imagenJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
 
 
+        TextView textJoin = findViewById(R.id.text_join_england);
+        textJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
+
 
         comprobarPermisoYEmpezar();
 
