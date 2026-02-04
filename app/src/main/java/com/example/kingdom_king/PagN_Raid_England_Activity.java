@@ -3,14 +3,13 @@ package com.example.kingdom_king;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class PagN_Raid_England_Activity extends AppCompatActivity {
+public class PagN_Raid_England_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,41 @@ public class PagN_Raid_England_Activity extends AppCompatActivity {
             Intent intent = new Intent(this, PagM_Raid_Incursiones_Activity.class);
             startActivity(intent);
         });
+
+
+
+
+        // boton manual para pasar a la pestaña de las join succesfull (N->O)
+        ConstraintLayout btnIrARaid = findViewById(R.id.contenedor_btn_join);
+        btnIrARaid.setOnClickListener(v -> UnirseALaRaid());
+
+
+
+        // boton manual para pasar a la pestaña de las join succesfull (N->O)
+        TextView textJoin = findViewById(R.id.JoinRaidd);
+        textJoin.setOnClickListener(v -> UnirseALaRaid());
+
+
+        comprobarPermisoYEmpezar();
+
+    }
+
+    private void UnirseALaRaid() {
+        Intent intent = new Intent(this, PagO_Joined_Succes_Activity.class);
+        startActivity(intent);
+    }
+
+
+    @Override
+    protected void onVoiceCommand(String comando) {
+        String comandoNormalizado = comando.toLowerCase().trim();
+
+        if (comandoNormalizado.contains("unirse"))  {
+            hablar("unido al raid");
+            UnirseALaRaid();
+
+        }
+
 
     }
 }
