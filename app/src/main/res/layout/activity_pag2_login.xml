@@ -159,6 +159,8 @@
         android:layout_height="0dp"
         android:text="Remenber Me"
         android:textColor="@color/white"
+        android:buttonTint="@color/color_letras_pag5"
+
         app:layout_constraintBottom_toTopOf="@+id/guidelineTopLogin"
         app:layout_constraintStart_toStartOf="@+id/guidelinemargIzq"
         app:layout_constraintTop_toTopOf="@+id/guideline"
