@@ -2,6 +2,7 @@ package com.example.kingdom_king;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -29,6 +30,10 @@ public class PagF_Payment_Activity extends BaseVoiceActivity {
         // boton manual para cuando pulse el contenedor de seguir comprando pase al home
         ConstraintLayout btnContinuarComprando = findViewById(R.id.btn_continuar_comprando);
         btnContinuarComprando.setOnClickListener(v -> irAPaginaHome());
+
+        // boton manual para cuando pulse el contenedor de seguir comprando pase al home
+        TextView txtContinuarComprando = findViewById(R.id.txt_continuar_comprando);
+        txtContinuarComprando.setOnClickListener(v -> irAPaginaHome());
 
     }
 
