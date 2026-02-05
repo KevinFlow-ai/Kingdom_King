@@ -197,7 +197,7 @@
             app:layout_constraintStart_toEndOf="@+id/icon_obj"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.12"
-            app:srcCompat="@drawable/pag10_noti"
+            app:srcCompat="@drawable/pag8_perfil_foto_abajo"
             tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -205,7 +205,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView13"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/pag10_noti"
+        app:srcCompat="@drawable/pag8_perfil_foto_abajo"
         tools:ignore="ContentDescription,ImageContrastCheck" />
 
 
