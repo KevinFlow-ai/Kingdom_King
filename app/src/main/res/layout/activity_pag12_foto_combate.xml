@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PagL_FotoCombate_Activity"
-    android:background="@drawable/pag12_fondo_ampliada">
+    android:background="#000000"
+    tools:context=".PagL_FotoCombate_Activity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_Izq_corazon"
@@ -75,6 +75,16 @@
             app:layout_constraintVertical_bias="0.476"
             tools:ignore="HardcodedText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <VideoView
+        android:id="@+id/video_fondo_lucha"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
