@@ -90,8 +90,10 @@
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/guia_inferior_barra"
         app:layout_constraintEnd_toStartOf="@+id/guia_derecha"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
-        app:layout_constraintTop_toBottomOf="@+id/guia_header_limite">
+        app:layout_constraintTop_toBottomOf="@+id/guia_header_limite"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:id="@+id/contenedor_raid"
@@ -129,20 +131,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="4dp"
                     android:text="@string/raid_on_england"
                     android:textColor="#E0C9A6"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/ic_calendario_england"
-                    app:layout_constraintStart_toStartOf="@+id/img_raid_england" />
+                    app:layout_constraintEnd_toStartOf="@+id/guidelinetextp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/img_raid_england"
+                    app:layout_constraintTop_toTopOf="@+id/guideline39"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
                     android:id="@+id/ic_calendario_england"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="16dp"
                     app:layout_constraintBottom_toBottomOf="@+id/img_raid_england"
                     app:layout_constraintStart_toStartOf="@+id/img_raid_england"
                     app:srcCompat="@drawable/pag13_saturday"
@@ -158,8 +164,10 @@
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/ic_calendario_england"
                     app:layout_constraintEnd_toStartOf="@+id/guidelinetextp"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/guideline31"
                     app:layout_constraintTop_toTopOf="@+id/ic_calendario_england"
+                    app:layout_constraintVertical_bias="0.0"
                     tools:ignore="HardcodedText" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -207,6 +215,13 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.62" />
 
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.66" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -237,20 +252,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="4dp"
                     android:text="@string/raid_on_francia"
                     android:textColor="#E0C9A6"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/ic_calendario_francia"
-                    app:layout_constraintStart_toStartOf="@+id/img_raid_francia" />
+                    app:layout_constraintEnd_toStartOf="@+id/guideline37"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/img_raid_francia"
+                    app:layout_constraintTop_toTopOf="@+id/guideline40"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
                     android:id="@+id/ic_calendario_francia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="16dp"
                     app:layout_constraintBottom_toBottomOf="@+id/img_raid_francia"
                     app:layout_constraintStart_toStartOf="@+id/img_raid_francia"
                     app:srcCompat="@drawable/pag13_saturday"
@@ -313,6 +332,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.65" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.65" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
