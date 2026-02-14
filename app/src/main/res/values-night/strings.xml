@@ -55,4 +55,7 @@
     <string name="ok">OK</string>
     <string name="joined_successfully">Joined Successfully</string>
     <string name="texto_pag15">You have successfully joined the raid. Prepare for battle!</string>
+    <string name="save_this_card_for_future_purchases">Save this card for future purchases</string>
+    <string name="change_avatar">Change avatar</string>
+    <string name="my_orders">My Orders</string>
 </resources>

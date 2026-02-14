@@ -9,7 +9,6 @@
     tools:context=".PagH_Edit_Profile_Activity"
     android:background="@drawable/pag8_fondo_1">
 
-    <!-- 7. ADAPTABILIDAD: Uso de guías porcentuales para diseño responsivo -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_superior"
         android:layout_width="wrap_content"
@@ -45,7 +44,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
 
-    <!-- CABECERA: Título, Botón Volver y Saldo -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/seccion_cabecera"
         android:layout_width="0dp"
@@ -68,13 +66,14 @@
             app:layout_constraintHeight_percent="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fleecha" />
+            app:srcCompat="@drawable/fleecha"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/txt_titulo_editar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit Profile"
+            android:text="@string/edit_profile"
             android:textColor="@color/color_letras_pag5"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -91,12 +90,14 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                app:srcCompat="@drawable/moneda" />
+                app:srcCompat="@drawable/moneda"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/txt_saldo_oro"
@@ -111,7 +112,6 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTENIDO: Formulario con Scroll para evitar desbordamiento en pantallas pequeñas -->
     <ScrollView
         android:id="@+id/scroll_formulario"
         android:layout_width="0dp"
@@ -129,7 +129,6 @@
             android:paddingTop="16dp"
             android:paddingBottom="24dp">
 
-            <!-- PERFIL: Avatar y Nombre -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/bloque_perfil_superior"
                 android:layout_width="match_parent"
@@ -144,7 +143,8 @@
                     android:scaleType="centerCrop"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/pag7_foto_perfil" />
+                    app:srcCompat="@drawable/pag7_foto_perfil"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/txt_nombre_jarl"
@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Jarl Erik"
+                    android:text="@string/jarl_erik"
                     android:textColor="@color/color_letras_pag5"
                     android:textSize="22sp"
                     android:textStyle="bold"
@@ -173,7 +173,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Change avatar"
+                        android:text="@string/change_avatar"
                         android:textColor="@color/color_letras_pag5"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -183,7 +183,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- CAMPOS DE TEXTO: Full Name -->
             <TextView
                 android:id="@+id/eti_nombre_completo"
                 android:layout_width="wrap_content"
@@ -191,7 +190,8 @@
                 android:layout_marginBottom="4dp"
                 android:text="Full Name"
                 android:textColor="@color/color_letras_pag5"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/et_nombre_completo"
@@ -199,11 +199,11 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/pag8_marco"
                 android:paddingStart="16dp"
-                android:text="Jarl Erik"
+                android:text="@string/jarl_erik"
                 android:textColor="@color/color_letras_pag5"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                tools:ignore="RtlSymmetry" />
 
-            <!-- Email -->
             <TextView
                 android:id="@+id/eti_email"
                 android:layout_width="wrap_content"
@@ -222,9 +222,9 @@
                 android:paddingStart="16dp"
                 android:text="erik@example.com"
                 android:textColor="@color/color_letras_pag5"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                tools:ignore="HardcodedText" />
 
-            <!-- Phone Number -->
             <TextView
                 android:id="@+id/eti_telefono"
                 android:layout_width="wrap_content"
@@ -260,10 +260,10 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/pag8_icono_ipone" />
+                    app:srcCompat="@drawable/pag8_icono_ipone"
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Ubicación -->
             <LinearLayout
                 android:id="@+id/contenedor_ubicacion"
                 android:layout_width="wrap_content"
@@ -275,7 +275,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/pag8_ubicacion" />
+                    app:srcCompat="@drawable/pag8_ubicacion"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/txt_ubicacion_val"
@@ -287,7 +288,6 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <!-- Botón Mis Pedidos -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/btn_mis_pedidos"
                 android:layout_width="match_parent"
@@ -312,7 +312,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="My Orders"
+                    android:text="@string/my_orders"
                     android:textColor="@color/color_letras_pag5"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -326,14 +326,14 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/pag7_siguiente" />
+                    app:srcCompat="@drawable/pag7_siguiente"
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- BARRA NAVEGACIÓN INFERIOR: Con iconos unificados según solicitud -->
-    <!-- BARRA DE NAVEGACIÓN INFERIOR: Diseño adaptable con pesos y sin medidas absolutas -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/barra_navegacion_inferior"
         android:layout_width="0dp"
@@ -343,39 +343,36 @@
         app:layout_constraintStart_toStartOf="@+id/guia_izquierda"
         app:layout_constraintTop_toTopOf="@+id/guia_inferior_barra">
 
-        <!-- Botón 1: Inicio -->
         <ImageView
             android:id="@+id/btn_nav_inicio"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:padding="14dp"
-            android:scaleType="fitCenter"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="14dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/btn_nav_cartera"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_nav_cartera"
-            app:srcCompat="@drawable/pag3_btn_inferior_home" />
+            app:srcCompat="@drawable/pag3_btn_inferior_home"
+            tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck" />
 
-        <!-- Botón 2: Cartera/Tienda -->
         <ImageView
             android:id="@+id/btn_nav_cartera"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:padding="14dp"
-            android:scaleType="fitCenter"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="14dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/btn_nav_central"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/btn_nav_inicio"
-            app:layout_constraintEnd_toStartOf="@+id/btn_nav_central"
-            app:srcCompat="@drawable/pag3_btn_inferior_cartera" />
+            app:srcCompat="@drawable/pag3_btn_inferior_cartera"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
-        <!-- Botón 3: Central (Escudo) - Más grande y centrado -->
-
-        <!-- Botón 4: Objetos/Mapa -->
 
         <ImageView
             android:id="@+id/btn_nav_central"
@@ -384,42 +381,44 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:layout_marginBottom="5dp"
             android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_nav_objetos"
             app:layout_constraintHorizontal_weight="1.3"
             app:layout_constraintStart_toEndOf="@+id/btn_nav_cartera"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/pag3_btn_inferior_principal"
-            tools:layout_editor_absoluteY="4dp" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
         <ImageView
             android:id="@+id/btn_nav_objetos"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:padding="14dp"
-            android:scaleType="fitCenter"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="14dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/btn_nav_perfil"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/btn_nav_central"
-            app:layout_constraintEnd_toStartOf="@+id/btn_nav_perfil"
-            app:srcCompat="@drawable/pag3_btn_inferior_obj" />
+            app:srcCompat="@drawable/pag3_btn_inferior_obj"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
-        <!-- Botón 5: Perfil (Foto circular) -->
         <ImageView
             android:id="@+id/btn_nav_perfil"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:padding="12dp"
-            android:scaleType="fitCenter"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/btn_nav_objetos"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/pag8_perfil_foto_abajo" />
+            app:srcCompat="@drawable/pag8_perfil_foto_abajo"
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

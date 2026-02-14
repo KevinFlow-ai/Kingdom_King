@@ -9,7 +9,6 @@
     tools:context=".PagE_Pago_Espada_Activity"
     android:background="@drawable/pago_espadaa_1">
 
-    <!-- Guía superior-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top_arriba"
         android:layout_width="wrap_content"
@@ -17,7 +16,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.02" />
 
-    <!-- Guía de cabecera -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_header_checkout"
         android:layout_width="wrap_content"
@@ -25,7 +23,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.10" />
 
-    <!-- Guías laterales para adaptabilidad -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical_izquierdo"
         android:orientation="vertical"
@@ -40,7 +37,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.95" />
 
-    <!-- CABECERA -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header_cabecera"
         android:layout_width="0dp"
@@ -96,7 +92,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/moneda" />
+                app:srcCompat="@drawable/moneda"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/cantidad_monedas"
@@ -111,7 +108,6 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTENIDO CON SCROLL -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -127,7 +123,6 @@
             android:paddingTop="16dp"
             android:paddingBottom="16dp">
 
-            <!-- BLOQUE: PRODUCTO (ESPADA) -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contenedor_producto_espada"
                 android:layout_width="match_parent"
@@ -145,7 +140,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/pag5_icono_espada" />
+                    app:srcCompat="@drawable/pag5_icono_espada"
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
 
                 <TextView
                     android:id="@+id/txt_nombre_espada"
@@ -186,7 +182,6 @@
                     tools:ignore="HardcodedText" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- BLOQUE: RESUMEN DEL PEDIDO -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contenedor_order_summary"
                 android:layout_width="match_parent"
@@ -314,7 +309,6 @@
                     tools:ignore="HardcodedText" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- BLOQUE: INFORMACIÓN DE PAGO -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contenedor_info_pago"
                 android:layout_width="match_parent"
@@ -360,7 +354,6 @@
                     app:layout_constraintStart_toEndOf="@+id/txt_payment_info"
                     app:layout_constraintTop_toTopOf="@+id/txt_payment_info" />
 
-                <!-- Contenedor Tarjeta -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/contenedor_tarjeta_pago"
                     android:layout_width="match_parent"
@@ -376,7 +369,8 @@
                         android:layout_height="24dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/muneco_pag5" />
+                        app:srcCompat="@drawable/muneco_pag5"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/txt_nombre_titular"
@@ -434,7 +428,8 @@
                         app:layout_constraintBottom_toBottomOf="@+id/txt_num_tarjeta"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/txt_num_tarjeta"
-                        app:srcCompat="@drawable/tarjeta_pag5" />
+                        app:srcCompat="@drawable/tarjeta_pag5"
+                        tools:ignore="ContentDescription" />
 
                     <View
                         android:id="@+id/divisor_card_2"
@@ -452,7 +447,8 @@
                         android:layout_marginTop="8dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divisor_card_2"
-                        app:srcCompat="@drawable/calendario_pag5" />
+                        app:srcCompat="@drawable/calendario_pag5"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
 
                     <TextView
                         android:id="@+id/txt_fecha_exp"
@@ -474,7 +470,8 @@
                         app:layout_constraintBottom_toBottomOf="@+id/img_calendario"
                         app:layout_constraintStart_toEndOf="@+id/txt_fecha_exp"
                         app:layout_constraintTop_toTopOf="@+id/img_calendario"
-                        app:srcCompat="@drawable/obj_pag5" />
+                        app:srcCompat="@drawable/obj_pag5"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
 
                     <TextView
                         android:id="@+id/txt_val_cvv"
@@ -490,13 +487,12 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Checkbox -->
                 <CheckBox
                     android:id="@+id/chk_guardar_info_pago"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Save this card for future purchases"
+                    android:text="@string/save_this_card_for_future_purchases"
                     android:textColor="@color/color_letras_pag5"
                     android:buttonTint="@color/color_letras_pag5"
                     android:textSize="14sp"
@@ -530,7 +526,8 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/pag5_icono_apple" />
+                            app:srcCompat="@drawable/pag5_icono_apple"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -570,7 +567,8 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/pag5_google" />
+                            app:srcCompat="@drawable/pag5_google"
+                            tools:ignore="ContentDescription,ImageContrastCheck" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -588,7 +586,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <!-- GUÍA INFERIOR -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_contenedor_compra"
         android:layout_width="wrap_content"
@@ -596,7 +593,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.87" />
 
-    <!-- BARRA NAVEGACIÓN INFERIOR -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -623,7 +619,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/pag3_btn_inferior_home"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/boton_inferior_cartera"
@@ -642,7 +638,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/pag3_btn_inferior_cartera"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/boton_inferior_central_principal"
