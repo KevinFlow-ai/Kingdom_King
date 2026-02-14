@@ -1,14 +1,9 @@
 package com.example.kingdom_king;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.ScaleAnimation;
-import android.widget.ImageView;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,42 +16,31 @@ public class PagA_Splash_Screen_Activity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_pag1_splash_screen);
 
-        ImageView fondoAnimado = findViewById(R.id.imagen_fondo_animada);
+        VideoView videoSplash = findViewById(R.id.video_splash);
 
-        // CONFIGURACIÓN DE LA ANIMACIÓN DE "ZOOM"
-        AnimationSet conjuntoAnimaciones = new AnimationSet(true);
+        // Ruta del video en la carpeta raw
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.pag1_1_video_splash_activity;
+        videoSplash.setVideoURI(Uri.parse(path));
 
-        // 1. Animación de Escalado: Empieza en miniatura (0.1) y llega al tamaño real (1.0)
-        ScaleAnimation zoomIn = new ScaleAnimation(
-                0.1f, 1.0f, // X
-                0.1f, 1.0f, // Y
-                Animation.RELATIVE_TO_SELF, 0.5f, // Pivote en el centro
-                Animation.RELATIVE_TO_SELF, 0.5f
-        );
-        zoomIn.setDuration(2000); // 2 segundos para que sea épico
+        // Cuando el video termine o pasen 6 segundos, pasamos a la siguiente pantalla
+        videoSplash.setOnCompletionListener(mp -> {
+            irALogin();
+        });
 
-        // 2. Animación de Aparecer (Alpha)
-        AlphaAnimation aparecer = new AlphaAnimation(0.0f, 1.0f);
-        aparecer.setDuration(2000);
+        // Iniciamos la reproducción
+        videoSplash.start();
 
-        conjuntoAnimaciones.addAnimation(zoomIn);
-        conjuntoAnimaciones.addAnimation(aparecer);
-        conjuntoAnimaciones.setInterpolator(new AccelerateDecelerateInterpolator());
 
-        // Iniciar la animación
-        fondoAnimado.startAnimation(conjuntoAnimaciones);
+    }
 
-        // TRANSICIÓN A LA SIGUIENTE PANTALLA
-        new Handler().postDelayed(() -> {
-            Intent intent = new Intent(PagA_Splash_Screen_Activity.this, PagB_Login_Activity.class);
-            startActivity(intent);
-            // Efecto de transición suave entre actividades
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            finish();
-        }, 3000); // Esperamos 3 segundos en total
+    private void irALogin() {
+        Intent intent = new Intent(PagA_Splash_Screen_Activity.this, PagB_Login_Activity.class);
+        startActivity(intent);
+        // Transición suave entre actividades
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
     }
 }
-
 
 
 
