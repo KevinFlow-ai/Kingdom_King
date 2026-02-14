@@ -222,6 +222,9 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.33" />
 
+        <!--
+
+        ===== la imagen solo, si queremos solo la imagen y no el video
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="0dp"
@@ -231,7 +234,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/pag14_foto_raid_ampliado"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription" />-->
+
+        <VideoView
+            android:id="@+id/videoView_raid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_imagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline29"
