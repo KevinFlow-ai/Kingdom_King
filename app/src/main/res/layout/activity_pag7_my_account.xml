@@ -447,6 +447,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Constraint_cerrar_cesion"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -457,6 +458,7 @@
                 android:padding="2dp">
 
                 <TextView
+                    android:id="@+id/btn_cerrar_sesion"
                     android:layout_width="103dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
