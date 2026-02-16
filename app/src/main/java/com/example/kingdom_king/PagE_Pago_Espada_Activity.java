@@ -66,12 +66,21 @@ public class PagE_Pago_Espada_Activity extends BaseVoiceActivity {
     protected void onVoiceCommand(String comando) {
         String comandoNormalizado = comando.toLowerCase().trim();
 
-        // Si el usuario dice "comprar"
-        if (comandoNormalizado.contains("pagar")) {
+        // Si el usuario dice "pagar"
+        if (comandoNormalizado.contains("pagar") ||
+                comandoNormalizado.contains("paga") ||
+                comandoNormalizado.contains("pagá") ||
+                comandoNormalizado.contains("pagah") ||
+                comandoNormalizado.contains("pague") ||
+                comandoNormalizado.contains("paguen") ||
+                comandoNormalizado.contains("pagarlo") ||
+                comandoNormalizado.contains("pagarla")) {
+
             hablar("Procesando compra");
             irAPaginaF();
             return;
         }
+
 
         // Si el usuario dice "comprar"
         if (comandoNormalizado.contains("pagar con google")) {

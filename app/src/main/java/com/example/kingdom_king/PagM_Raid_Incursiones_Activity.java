@@ -68,13 +68,17 @@ public class PagM_Raid_Incursiones_Activity extends BaseVoiceActivity {
     protected void onVoiceCommand(String comando) {
         String comandoNormalizado = comando.toLowerCase().trim();
 
-        if (comandoNormalizado.contains("inglaterra"))  {
+        if (comandoNormalizado.contains("inglaterra") ||
+                comandoNormalizado.contains("inglaterrra") ||
+                comandoNormalizado.contains("inglatera") ||
+                comandoNormalizado.contains("inglaterrah") ||
+                comandoNormalizado.contains("inglaterraaa") ||
+                comandoNormalizado.contains("ir a inglaterra")) {
+
             hablar("abriendo raid inglaterra");
             irAPaginaRaidInglaterra();
-
         }
-
-
     }
+
 
 }

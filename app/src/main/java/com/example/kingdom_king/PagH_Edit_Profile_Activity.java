@@ -53,11 +53,21 @@ public class PagH_Edit_Profile_Activity extends BaseVoiceActivity {
     protected void onVoiceCommand(String comando) {
         String comandoNormalizado = comando.toLowerCase().trim();
 
-        if (comandoNormalizado.contains("pedidos")) {
+        if (comandoNormalizado.contains("pedidos") ||
+                comandoNormalizado.contains("pedido") ||
+                comandoNormalizado.contains("pedios") ||
+                comandoNormalizado.contains("pedio") ||
+                comandoNormalizado.contains("pedíos") ||
+                comandoNormalizado.contains("pedídos") ||
+                comandoNormalizado.contains("pédídos") ||
+                comandoNormalizado.contains("pedíoh") ||
+                comandoNormalizado.contains("mis pedidos") ||
+                comandoNormalizado.contains("ver pedidos")) {
+
             hablar("procesando pedidos");
             irAPaginaDeVerPedidos();
-
         }
+
 
 
 

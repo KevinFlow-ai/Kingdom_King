@@ -50,7 +50,7 @@ public class PagG_MyAccount_Activity extends BaseVoiceActivity {
         // 2. Navegamos al Login (PagB)
         Intent intent = new Intent(this, PagB_Login_Activity.class);
         
-        // 3. LIMPIAR EL HISTORIAL: Esto es vital para una "app verdadera". 
+        // 3. LIMPIAR EL HISTORIAL: Esto es vital para una "app verdadera".
         // Evita que el usuario pueda volver atrás a su cuenta una vez cerrada la sesión.
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         
@@ -67,11 +67,20 @@ public class PagG_MyAccount_Activity extends BaseVoiceActivity {
     protected void onVoiceCommand(String comando) {
         String comandoNormalizado = comando.toLowerCase().trim();
 
-        if (comandoNormalizado.contains("editar")) {
+        if (comandoNormalizado.contains("editar") ||
+                comandoNormalizado.contains("edita") ||
+                comandoNormalizado.contains("editá") ||
+                comandoNormalizado.contains("editah") ||
+                comandoNormalizado.contains("edite") ||
+                comandoNormalizado.contains("editarlo") ||
+                comandoNormalizado.contains("editarla") ||
+                comandoNormalizado.contains("heditar")) {
+
             hablar("editando perfil");
             irAPaginaEditarPerfil();
         }
-        
+
+
         // También añadimos el comando de voz para cerrar sesión por comodidad
         if (comandoNormalizado.contains("cerrar sesión") || comandoNormalizado.contains("salir")) {
             cerrarSesion();

@@ -58,7 +58,6 @@ public class PagF_Payment_Activity extends BaseVoiceActivity {
         String comandoNormalizado = comando.toLowerCase().trim()
                 .replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u");
 
-        // Si el comando contiene cualquiera de estas palabras clave
         if (comandoNormalizado.contains("comprando") ||
                 comandoNormalizado.contains("continuar")) {
 
