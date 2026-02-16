@@ -504,6 +504,8 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
 
+        <!--
+        ===============PARA DEJAR LA IMAGEN
         <ImageView
             android:id="@+id/imageHombres"
             android:layout_width="0dp"
@@ -516,6 +518,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/pag11_hombres" />
+        -->
+
+        <VideoView
+            android:id="@+id/videoHombres"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
 

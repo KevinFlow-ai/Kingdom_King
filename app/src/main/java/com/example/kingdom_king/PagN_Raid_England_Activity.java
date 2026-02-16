@@ -83,8 +83,15 @@ public class PagN_Raid_England_Activity extends BaseVoiceActivity {
 
     @Override
     protected void onVoiceCommand(String comando) {
+        // Normalización básica
         String comandoNormalizado = comando.toLowerCase().trim();
-        if (comandoNormalizado.contains("unirse"))  {
+
+        // Manejamos variaciones fonéticas de la palabra "unirse"
+        if (comandoNormalizado.contains("unirse") || 
+            comandoNormalizado.contains("unirce") || 
+            comandoNormalizado.contains("unirze") ||
+            comandoNormalizado.contains("unirme")) {
+            
             hablar("unido al raid");
             UnirseALaRaid();
         }
