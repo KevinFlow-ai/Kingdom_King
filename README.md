@@ -11,9 +11,8 @@ Este es un prototipo de un juego basado en la temática vikinga que utiliza coma
 - Interacción mediante comandos de voz
 
 ## Tecnologías
-- Java
+- XML
 - Google Speech Recognition
-- HTML/CSS para la interfaz de usuario
 
 ## Arquitectura
 El juego está diseñado para ser una aplicación de frontend que utiliza el reconocimiento de voz para permitir a los jugadores interactuar con el mismo.
@@ -45,9 +44,3 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 ## Información del Autor
 Creado por KevinFlow-ai.
 
-## 📹 Demo & Videos
-
-<video width="320" height="240" controls>
-  <source src="app/src/main/res/raw/pag1_1_video_splash_activity.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
