@@ -1,5 +1,7 @@
 # Prototipo de Juego Temático Vikingos
 
+<img src="https://raw.githubusercontent.com/KevinFlow-ai/Kingdom_King/master/app/src/main/res/raw/pag1_gift_video_splash_activity.gif" width="300">
+
 ![Badges](https://img.shields.io/badge/viking-themed-brightgreen.svg)
 
 ## Descripción
@@ -44,8 +46,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 ## Información del Autor
 Creado por KevinFlow-ai.
 
-# Prototipo de Juego Temático Vikingos
 
-<img src="https://raw.githubusercontent.com/KevinFlow-ai/Kingdom_King/master/app/src/main/res/raw/pag1_gift_video_splash_activity.gif" width="300">
 
 
