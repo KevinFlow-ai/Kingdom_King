@@ -8,7 +8,6 @@
 
 [![Android](https://img.shields.io/badge/Platform-Android-brightgreen.svg)](https://developer.android.com/)
 [![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.oracle.com/java/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Viking Theme](https://img.shields.io/badge/Theme-Viking-brown.svg)
 
 ## 📝 Descripción
