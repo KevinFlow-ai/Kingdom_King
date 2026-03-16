@@ -1,7 +1,6 @@
 # 👑 Kingdom King - Prototipo de Juego Temático Vikingos
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KevinFlow-ai/Kingdom_King/master/app/src/main/res/raw/pag1_gift_video_splash_activity.gif" width="300" alt="Splash Kingdom King">
   <img src="https://raw.githubusercontent.com/KevinFlow-ai/Kingdom_King/master/app/src/main/res/raw/vikingo_app_gift.gif" width="300" alt="Vikingo App Gift">
 </p>
 
