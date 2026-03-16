@@ -5,6 +5,7 @@
   <img src="https://raw.githubusercontent.com/KevinFlow-ai/Kingdom_King/master/app/src/main/res/raw/vikingo_app_gift.gif" width="300" alt="Vikingo App Gift">
 </p>
 
+
 [![Android](https://img.shields.io/badge/Platform-Android-brightgreen.svg)](https://developer.android.com/)
 [![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.oracle.com/java/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
