@@ -27,27 +27,30 @@ public class PagJ_Live_Activity extends BaseVoiceActivity {
             return insets;
         });
 
-        // Botón manual: PARA VOLVER ATRAS CON EL BOTON, Esto vuelve al home(pagC)
-        ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
-        btnFlechaAtras.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PagC_Home_Activity.class);
-            startActivity(intent);
-        });
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
 
+        // Botón manual: PARA VOLVER ATRAS CON EL BOTON
+        ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
         // Botón manual para ver el combate vikingo
         ConstraintLayout VerFotoCombate = findViewById(R.id.constraintLayout_hombre_combate);
-        VerFotoCombate.setOnClickListener(v -> VerCombate());
+        if (VerFotoCombate != null) {
+            VerFotoCombate.setOnClickListener(v -> VerCombate());
+        }
 
-
-        // Botón manual para ver el combate vikingo
         ImageView ImagenCombate = findViewById(R.id.imagen_hombre_lucha);
-        ImagenCombate.setOnClickListener(v -> VerCombate());
+        if (ImagenCombate != null) {
+            ImagenCombate.setOnClickListener(v -> VerCombate());
+        }
 
-
-        // Botón manual para ver el combate vikingo
         ConstraintLayout ConstraintTextoCombate = findViewById(R.id.texto_combate);
-        ConstraintTextoCombate.setOnClickListener(v -> VerCombate());
+        if (ConstraintTextoCombate != null) {
+            ConstraintTextoCombate.setOnClickListener(v -> VerCombate());
+        }
 
         comprobarPermisoYEmpezar();
 
@@ -61,7 +64,6 @@ public class PagJ_Live_Activity extends BaseVoiceActivity {
         Intent intent = new Intent(this, PagK_VikingCombat_Activity.class);
         startActivity(intent);
     }
-
 
     @Override
     protected void onVoiceCommand(String comando) {

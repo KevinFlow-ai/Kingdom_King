@@ -26,21 +26,27 @@ public class PagF_Payment_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
 
         // boton manual para cuando pulse el contenedor de seguir comprando pase al home
         ConstraintLayout btnContinuarComprando = findViewById(R.id.btn_continuar_comprando);
-        btnContinuarComprando.setOnClickListener(v -> irAPaginaHome());
+        if (btnContinuarComprando != null) {
+            btnContinuarComprando.setOnClickListener(v -> irAPaginaHome());
+        }
 
         // boton manual para cuando pulse el contenedor de seguir comprando pase al home
         TextView txtContinuarComprando = findViewById(R.id.txt_continuar_comprando);
-        txtContinuarComprando.setOnClickListener(v -> irAPaginaHome());
-
+        if (txtContinuarComprando != null) {
+            txtContinuarComprando.setOnClickListener(v -> irAPaginaHome());
+        }
     }
 
 
 
     private void irAPaginaHome() {
         Intent intent = new Intent(this, PagC_Home_Activity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
     }
 

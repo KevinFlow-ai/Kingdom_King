@@ -27,16 +27,13 @@ public class PagI_MyOders_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
+
         ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
-        btnFlechaAtras.setOnClickListener(v -> {
-            finish();
-        });
-
-        // Botón manual para ir a volver a home
-        ImageView btnVerMispedidos = findViewById(R.id.btn_central_inferior);
-        btnVerMispedidos.setOnClickListener(v -> irAHome());
-
-
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
         comprobarPermisoYEmpezar();
 
@@ -46,6 +43,7 @@ public class PagI_MyOders_Activity extends BaseVoiceActivity {
 
     private void irAHome() {
         Intent intent = new Intent(this, PagC_Home_Activity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
@@ -54,7 +52,7 @@ public class PagI_MyOders_Activity extends BaseVoiceActivity {
     protected void onVoiceCommand(String comando) {
         String comandoNormalizado = comando.toLowerCase().trim();
 
-        if (comandoNormalizado.contains("volver")) {
+        if (comandoNormalizado.contains("volver") || comandoNormalizado.contains("inicio")) {
             hablar("Volviendo al inicio");
             irAHome();
 

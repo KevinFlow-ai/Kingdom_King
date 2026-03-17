@@ -1,13 +1,15 @@
 package com.example.kingdom_king;
 
 import android.content.Intent;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -148,6 +150,57 @@ public abstract class BaseVoiceActivity extends AppCompatActivity {
         iniciarEscucha();
     }
 
+    /**
+     * Configura la navegación de la barra inferior buscando todos los IDs posibles usados en el proyecto.
+     */
+    protected void configurarNavegacionInferior() {
+        // --- 1 y 3. HOME (Botón de inicio y Botón Central) ---
+        int[] homeIds = {
+            R.id.boton_inferior_inicio, R.id.nav_inicio, R.id.btn_nav_inicio, R.id.icon_home, R.id.imageView8, R.id.imageView_home,
+            R.id.boton_inferior_central_principal, R.id.nav_central, R.id.btn_nav_central, R.id.icon_principal, R.id.imageView10, R.id.btn_central_inferior
+        };
+        configurarBoton(homeIds, PagC_Home_Activity.class);
+
+        // --- 2. CARTERA / RAID / MISIONES (Botón maletín) ---
+        int[] carteraIds = {R.id.boton_inferior_cartera, R.id.nav_cartera, R.id.btn_nav_cartera, R.id.icon_maletin, R.id.imageView9, R.id.imageView11};
+        configurarBoton(carteraIds, PagM_Raid_Incursiones_Activity.class);
+
+        // --- 4. TRANSMISIONES EN VIVO (Botón mochila/notificaciones) ---
+        int[] liveIds = {R.id.boton_inferior_notificaciones, R.id.nav_notificaciones, R.id.btn_nav_objetos, R.id.icon_obj, R.id.imageView13, R.id.imageView_maletin};
+        configurarBoton(liveIds, PagJ_Live_Activity.class);
+
+        // --- 5. BOTÓN VACÍO (Próximamente...) ---
+        int[] emptyIds = {R.id.boton_inferior_objetos, R.id.nav_objetos, R.id.btn_nav_perfil, R.id.icon_noti, R.id.imageView14, R.id.imageView12};
+        for (int id : emptyIds) {
+            View v = findViewById(id);
+            if (v != null) {
+                v.setOnClickListener(view -> {
+                    // Se queda vacío por petición del usuario para futura funcionalidad
+                    Toast.makeText(this, "Próximamente...", Toast.LENGTH_SHORT).show();
+                });
+            }
+        }
+    }
+
+    private void configurarBoton(int[] ids, final Class<?> targetActivity) {
+        for (int id : ids) {
+            View v = findViewById(id);
+            if (v != null) {
+                v.setOnClickListener(view -> {
+                    // Evitar reiniciar la misma actividad si ya estamos en ella
+                    if (!this.getClass().equals(targetActivity)) {
+                        Intent intent = new Intent(this, targetActivity);
+                        // Limpiar historial si es necesario
+                        if (targetActivity.equals(PagC_Home_Activity.class)) {
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        }
+                        startActivity(intent);
+                    }
+                });
+            }
+        }
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -164,12 +217,5 @@ public abstract class BaseVoiceActivity extends AppCompatActivity {
             speechRecognizer.destroy();
             speechRecognizer = null;
         }
-        /*
-        if (tts != null) {
-            tts.stop();
-            tts.shutdown();
-        }*/
     }
 }
-
-

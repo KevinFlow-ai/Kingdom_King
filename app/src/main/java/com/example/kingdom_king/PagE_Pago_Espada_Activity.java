@@ -29,24 +29,26 @@ public class PagE_Pago_Espada_Activity extends BaseVoiceActivity {
             return insets; // Solo retornamos los insets quitamos los padding, lo que esta en comentarios
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
 
         // boton manual para cuando pulse el flecha atras vuelva a la pantalla anterior
         ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
-        btnFlechaAtras.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PagD_Espada_Activity.class);
-            startActivity(intent);
-        });
-
-
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
         // boton manual para cuando pulse el contenedor de pagar de apple pase a la siguiente pantalla
         ConstraintLayout btnComprarEspada_Apple = findViewById(R.id.btn_pago_apple);
-        btnComprarEspada_Apple.setOnClickListener(v -> irAPaginaF());
+        if (btnComprarEspada_Apple != null) {
+            btnComprarEspada_Apple.setOnClickListener(v -> irAPaginaF());
+        }
 
         // boton manual para cuando pulse el contenedor de pagar de Google pase a la siguiente pantalla
         ConstraintLayout btnComprarEspada_Google = findViewById(R.id.btn_pago_google);
-        btnComprarEspada_Google.setOnClickListener(v -> irAPaginaF());
-
+        if (btnComprarEspada_Google != null) {
+            btnComprarEspada_Google.setOnClickListener(v -> irAPaginaF());
+        }
 
 
 

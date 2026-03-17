@@ -21,47 +21,34 @@ public class PagK_VikingCombat_Activity extends BaseVoiceActivity {
             return insets;
         });
 
-        // Botón manual: PARA VOLVER ATRAS CON EL BOTON, Esto vuelve al home(pagC)
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
+
+        // Botón manual: PARA VOLVER ATRAS
         ImageView btnFlechaAtras = findViewById(R.id.flecha_atras);
-        btnFlechaAtras.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PagJ_Live_Activity.class);
-            startActivity(intent);
-        });
-
-        /*
-        ======= PARA LA IMAGEN, POR SI QUEREMOS QUITAR EL VIDEO Y MOSTRAR LA IMAGEN
-
-        Botón manual para ver foto de combate vikingo
-        ImageView ImagenCombateAmpliado = findViewById(R.id.imageHombres);
-        ImagenCombateAmpliado.setOnClickListener(v -> VerCombate());
-
-
-        // Botón manual para ver foto de combate vikingo
-        ConstraintLayout ConstraintFotoAmpliadoCombate = findViewById(R.id.combate);
-        ConstraintFotoAmpliadoCombate.setOnClickListener(v -> VerCombate());
-
-
-         */
-
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
         // Configuración del VIDEO
         VideoView videoHombres = findViewById(R.id.videoHombres);
-        String path = "android.resource://" + getPackageName() + "/" + R.raw.pag11_1_hombres_combate;
-        videoHombres.setVideoPath(path);
+        if (videoHombres != null) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.pag11_1_hombres_combate;
+            videoHombres.setVideoPath(path);
 
-
-        videoHombres.setOnPreparedListener(mp -> {
-            // mp.setVolume(0f, 0f); // Muteado
-            mp.setLooping(true);  // Bucle infinito
-        });
-        
-        videoHombres.start();
-
-        videoHombres.setOnClickListener(v -> VerCombate());
+            videoHombres.setOnPreparedListener(mp -> {
+                mp.setLooping(true);  // Bucle infinito
+            });
+            
+            videoHombres.start();
+            videoHombres.setOnClickListener(v -> VerCombate());
+        }
 
         // Mantenemos el clic en el contenedor por si acaso
         ConstraintLayout ConstraintFotoAmpliadoCombate = findViewById(R.id.combate);
-        ConstraintFotoAmpliadoCombate.setOnClickListener(v -> VerCombate());
+        if (ConstraintFotoAmpliadoCombate != null) {
+            ConstraintFotoAmpliadoCombate.setOnClickListener(v -> VerCombate());
+        }
 
         comprobarPermisoYEmpezar();
     }
@@ -88,9 +75,4 @@ public class PagK_VikingCombat_Activity extends BaseVoiceActivity {
             VerCombate();
         }
     }
-
 }
-
-
-
-
