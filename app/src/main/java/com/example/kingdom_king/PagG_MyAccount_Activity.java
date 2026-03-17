@@ -22,21 +22,32 @@ public class PagG_MyAccount_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
+
         // Botón Atrás
         ImageView btnFlechaAtras = findViewById(R.id.btn_volver_atras);
-        btnFlechaAtras.setOnClickListener(v -> finish());
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
         // Botón Editar Perfil
         ConstraintLayout btnEditarPerfil = findViewById(R.id.btn_editar_perfil);
-        btnEditarPerfil.setOnClickListener(v -> irAPaginaEditarPerfil());
+        if (btnEditarPerfil != null) {
+            btnEditarPerfil.setOnClickListener(v -> irAPaginaEditarPerfil());
+        }
 
         // --- FUNCIONALIDAD CERRAR SESIÓN ---
         ConstraintLayout layoutCerrarSesion = findViewById(R.id.Constraint_cerrar_cesion);
         TextView txtCerrarSesion = findViewById(R.id.btn_cerrar_sesion);
 
         // Configuramos el clic en ambos elementos
-        layoutCerrarSesion.setOnClickListener(v -> cerrarSesion());
-        txtCerrarSesion.setOnClickListener(v -> cerrarSesion());
+        if (layoutCerrarSesion != null) {
+            layoutCerrarSesion.setOnClickListener(v -> cerrarSesion());
+        }
+        if (txtCerrarSesion != null) {
+            txtCerrarSesion.setOnClickListener(v -> cerrarSesion());
+        }
 
         // Iniciamos la escucha de voz
         comprobarPermisoYEmpezar();
@@ -84,6 +95,11 @@ public class PagG_MyAccount_Activity extends BaseVoiceActivity {
         // También añadimos el comando de voz para cerrar sesión por comodidad
         if (comandoNormalizado.contains("cerrar sesión") || comandoNormalizado.contains("salir")) {
             cerrarSesion();
+        }
+
+        if (comandoNormalizado.contains("volver") || comandoNormalizado.contains("inicio")) {
+            startActivity(new Intent(this, PagC_Home_Activity.class));
+            finish();
         }
     }
 }

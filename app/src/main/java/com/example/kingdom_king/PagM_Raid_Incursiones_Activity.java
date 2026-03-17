@@ -26,32 +26,35 @@ public class PagM_Raid_Incursiones_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
 
-        // Botón manual: PARA VOLVER ATRÁS (Vuelve a PagC)
+        // Botón manual: PARA VOLVER ATRÁS
         ImageView btnFlechaAtras = findViewById(R.id.btn_volver_atras);
-        btnFlechaAtras.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PagC_Home_Activity.class);
-            startActivity(intent);
-        });
-
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
         // boton manual para pasar a la pestaña de las Raid
         ConstraintLayout btnIrARaid = findViewById(R.id.contenedor_raid_england);
-        btnIrARaid.setOnClickListener(v -> irAPaginaRaidInglaterra());
-
-
-
+        if (btnIrARaid != null) {
+            btnIrARaid.setOnClickListener(v -> irAPaginaRaidInglaterra());
+        }
 
         ConstraintLayout btnJoin = findViewById(R.id.btn_join_england);
-        btnJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
+        if (btnJoin != null) {
+            btnJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
+        }
 
         ImageView imagenJoin = findViewById(R.id.img_raid_england);
-        imagenJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
-
+        if (imagenJoin != null) {
+            imagenJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
+        }
 
         TextView textJoin = findViewById(R.id.text_join_england);
-        textJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
-
+        if (textJoin != null) {
+            textJoin.setOnClickListener(v -> irAPaginaRaidInglaterra());
+        }
 
         comprobarPermisoYEmpezar();
 

@@ -21,21 +21,25 @@ public class PagN_Raid_England_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
+
         // Botón manual: PARA VOLVER ATRÁS
         ImageView btnFlechaAtras = findViewById(R.id.btn_volver_atras);
-        btnFlechaAtras.setOnClickListener(v -> {
-            Intent intent = new Intent(this, PagM_Raid_Incursiones_Activity.class);
-            startActivity(intent);
-        });
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
-        // Botón manual para unirse a la raid
-        ConstraintLayout btnIrARaid = findViewById(R.id.contenedor_btn_join);
-        btnIrARaid.setOnClickListener(v -> UnirseALaRaid());
+        // Botón manual para unirse a la Raid
+        ConstraintLayout btnJoinRaid = findViewById(R.id.contenedor_btn_join);
+        if (btnJoinRaid != null) {
+            btnJoinRaid.setOnClickListener(v -> irAPaginaExito());
+        }
 
         TextView textJoin = findViewById(R.id.JoinRaidd);
-        textJoin.setOnClickListener(v -> UnirseALaRaid());
-
-        comprobarPermisoYEmpezar();
+        if (textJoin != null) {
+            textJoin.setOnClickListener(v -> irAPaginaExito());
+        }
 
         // Configuración del VIDEO
         VideoView videoRaid = findViewById(R.id.videoView_raid);
@@ -76,24 +80,18 @@ public class PagN_Raid_England_Activity extends BaseVoiceActivity {
          */
     }
 
-    private void UnirseALaRaid() {
+    private void irAPaginaExito() {
         Intent intent = new Intent(this, PagO_Joined_Succes_Activity.class);
         startActivity(intent);
     }
 
     @Override
     protected void onVoiceCommand(String comando) {
-        // Normalización básica
         String comandoNormalizado = comando.toLowerCase().trim();
 
-        // Manejamos variaciones fonéticas de la palabra "unirse"
-        if (comandoNormalizado.contains("unirse") || 
-            comandoNormalizado.contains("unirce") || 
-            comandoNormalizado.contains("unirze") ||
-            comandoNormalizado.contains("unirme")) {
-            
-            hablar("unido al raid");
-            UnirseALaRaid();
+        if (comandoNormalizado.contains("unirse") || comandoNormalizado.contains("join")) {
+            hablar("uniéndose a la raid");
+            irAPaginaExito();
         }
     }
 }

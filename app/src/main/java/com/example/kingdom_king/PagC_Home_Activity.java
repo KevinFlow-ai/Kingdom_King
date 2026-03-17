@@ -24,6 +24,9 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
+
         // Botón manual para comprar espada
         ImageView btnComprarEspada = findViewById(R.id.btn_comprar_espada);
         btnComprarEspada.setOnClickListener(v -> irAPaginaD());
@@ -31,15 +34,6 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
         // Botón manual para ir a la pagina de usuario
         ImageView btnperfilusuario = findViewById(R.id.imagenPerfilUsuario);
         btnperfilusuario.setOnClickListener(v -> irAPaginaG());
-
-        // Botón manual para ir a la pagina de live
-        ImageView btnTransmision = findViewById(R.id.boton_inferior_notificaciones);
-        btnTransmision.setOnClickListener(v -> irAPaginaJ());
-
-        // Botón manual para ir a la pagina de Incursiones o Raid
-        ImageView btnRaid = findViewById(R.id.boton_inferior_cartera);
-        btnRaid.setOnClickListener(v -> irAPaginaM());
-
 
         // Iniciar la escucha de comandos de voz
         comprobarPermisoYEmpezar();
@@ -61,15 +55,16 @@ public class PagC_Home_Activity extends BaseVoiceActivity {
     private void irAPaginaJ() {
         Intent intent = new Intent(this, PagJ_Live_Activity.class);
         startActivity(intent);
-        //finish(); esto cierra la app
-
     }
 
     private void irAPaginaM() {
         Intent intent = new Intent(this, PagM_Raid_Incursiones_Activity.class);
         startActivity(intent);
-        //finish(); esto cierra la app
+    }
 
+    private void irAPaginaK() {
+        Intent intent = new Intent(this, PagK_VikingCombat_Activity.class);
+        startActivity(intent);
     }
 
     /**

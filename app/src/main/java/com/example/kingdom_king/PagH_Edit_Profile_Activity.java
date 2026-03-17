@@ -25,17 +25,19 @@ public class PagH_Edit_Profile_Activity extends BaseVoiceActivity {
             return insets;
         });
 
+        // Configurar la barra de navegación inferior
+        configurarNavegacionInferior();
+
         ImageView btnFlechaAtras = findViewById(R.id.btn_volver);
-        btnFlechaAtras.setOnClickListener(v -> {
-            // Esto cierra la pestaña actual y te "suelta" en la anterior
-            finish();
-        });
+        if (btnFlechaAtras != null) {
+            btnFlechaAtras.setOnClickListener(v -> finish());
+        }
 
         // Botón manual para ir a ver pedidos
         ConstraintLayout btnVerMispedidos = findViewById(R.id.btn_mis_pedidos);
-        btnVerMispedidos.setOnClickListener(v -> irAPaginaDeVerPedidos());
-
-
+        if (btnVerMispedidos != null) {
+            btnVerMispedidos.setOnClickListener(v -> irAPaginaDeVerPedidos());
+        }
 
         comprobarPermisoYEmpezar();
 
