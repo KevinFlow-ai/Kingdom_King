@@ -85,7 +85,16 @@ Kingdom_King/
 
 ---
 
+## 👨‍💻 Sobre mí
+
+Soy un desarrollador con enfoque en **resolver problemas reales a través de la tecnología**.
+
+¡Conectemos!
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Kevin_Flores-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/kevin-flores-full-stack-developer)
 
 
+---
 
+> *"La tecnología no sirve de nada si no ahorra tiempo y esfuerzo a las personas que la utilizan."*
 *Desarrollado con pasión por la temática nórdica y el desarrollo Android.*
