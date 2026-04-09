@@ -96,5 +96,4 @@ Soy un desarrollador con enfoque en **resolver problemas reales a través de la 
 
 ---
 
-> *"La tecnología no sirve de nada si no ahorra tiempo y esfuerzo a las personas que la utilizan."*
 *Desarrollado con pasión por la temática nórdica y el desarrollo Android.*
